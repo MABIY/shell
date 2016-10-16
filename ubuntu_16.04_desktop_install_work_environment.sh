@@ -39,8 +39,13 @@ echo "安装翻墙 shadowsocks-qt5"
 echo ji |sudo -S add-apt-repository ppa:hzwhuang/ss-qt5
 sudo apt-get update
 sudo apt-get install -y shadowsocks-qt5
-"安装google-chrome"
+
+echo "安装google-chrome"
 curl -o chrome64.deb  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo dpkg -i chrome64.deb
+
+echo "安装vitualbox" 
+curl -o virtualbox.deb http://download.virtualbox.org/virtualbox/5.1.6/virtualbox-5.1_5.1.6-110634~Ubuntu~xenial_amd64.deb && sudo dpkg -i virtualbox.deb
+
 echo "下载intelliJ Idea 并解压"
 curl --socks5-hostname localhost:1080 -L https://download-cf.jetbrains.com/idea/ideaIU-2016.2.4.tar.gz -o intell.tar.gz && mkdir -p ~/java && tar -zxvf intell.tar.gz -C ~/java
 echo "安装 maven"
