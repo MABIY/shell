@@ -3,8 +3,10 @@
 #更新系统
 echo "更新系统 start"
 echo ji | sudo -S apt-get -y update
-sudo apt-get -yqq upgrade
-sudo apt-get -yqq dist-upgrade
+sudo apt-get -y upgrade
+sudo apt-get -y dist-upgrade
+sudo apt-get autoremove
+
 echo "install git"
 sudo apt-get install -y git || "---------------install git fail "
 echo "更新系统 end"
