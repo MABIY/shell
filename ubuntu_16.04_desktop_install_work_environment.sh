@@ -11,7 +11,7 @@ echo "更新系统 end"
 
 
 echo "安装ssd"
-sudo apt-get install -y ssd
+sudo apt-get install -y ssh
 
 # LSB is keep distribution to keep the organizational structure of the Linux Foundation to standardize the software system structure
 sudo apt-get install -y lsb-core || echo "--------------lsb-core install error"
@@ -62,6 +62,6 @@ sudo update-alternatives --install /usr/bin/java java ~/java/jdk-7u79/bin/java 3
 sudo update-alternatives --install /usr/bin/javac javac ~/java/jdk-7u79/bin/javac 310
 
 echo "tomcat7 tomcat9 download and decompression"
-curl -o tomcat7.tar.gz http://mirror.its.dal.ca/apache/tomcat/tomcat-7/v7.0.72/bin/apache-tomcat-7.0.72.tar.gz || echo "---------error tomcat7 download"; tar -zxvf tomcat7.tar.gz -C ~/java || "--------解压tomcat7 失败"
-curl -o tomcat9.tar.gz  || http://apachemirror.ovidiudan.com/tomcat/tomcat-9/v9.0.0.M11/bin/apache-tomcat-9.0.0.M11.tar.gz echo "---------error tomcat9 download"; tar -zxvf tomcat7.tar.gz -C ~/java || "--------解
+curl -o tomcat7.tar.gz http://mirror.its.dal.ca/apache/tomcat/tomcat-7/v7.0.72/bin/apache-tomcat-7.0.72.tar.gz && tar -zxvf tomcat7.tar.gz -C ~/java || "--------解压tomcat7 失败"
+curl -o tomcat9.tar.gz  || http://apachemirror.ovidiudan.com/tomcat/tomcat-9/v9.0.0.M11/bin/apache-tomcat-9.0.0.M11.tar.gz && tar -zxvf tomcat7.tar.gz -C ~/java || "--------解
 压tomcat9 失败"
