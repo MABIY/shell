@@ -42,6 +42,9 @@ echo ji |sudo -S add-apt-repository ppa:hzwhuang/ss-qt5
 sudo apt-get update
 sudo apt-get install -y shadowsocks-qt5
 
+echo "安装sshPass"
+sudo apt-get install -y sshpass
+
 echo "安装google-chrome"
 curl -o chrome64.deb  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo dpkg -i chrome64.deb
 
