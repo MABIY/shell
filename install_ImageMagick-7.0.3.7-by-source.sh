@@ -15,7 +15,7 @@ then
   make clean
    if make && make install
     then
-       echo "install complete" && exit 0
+      ldconfig /usr/ && echo "install complete" && exit 0
    fi
      echo "make && make install erro" && exit 0
  fi
