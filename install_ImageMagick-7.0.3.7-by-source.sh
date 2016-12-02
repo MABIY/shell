@@ -1,7 +1,7 @@
 #!/bin/bash
 # install ImageMagick-7.0.3.7 on centos
 echo "start download ImageMagick-7.0.37"
-if curl -O http://www.imagemagick.org/download/ImageMagick-7.0.3-7.tar.gz
+if curl -O https://fossies.org/linux/misc/ImageMagick-7.0.3-8.tar.gz
 then
  tar -zxvf ImageMagick-7.0.3-7.tar.gz
  # png jpg 等依赖包
