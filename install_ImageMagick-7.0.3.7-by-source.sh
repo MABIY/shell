@@ -24,9 +24,22 @@ fi
 echo "download ImageMagick-7.0.3.7 error"
 
 
- # if error when make about jpeg
- # curl -o http://www.ijg.org/files/jpegsrc.v9.tar.gz
- #cd jpeg-9
- #./configure
- #make libdir=/usr/lib64
- #make libdir=/usr/lib64 install
+#无网络环境通过包安装支持格式jng jpeg png
+#cd jpeg-9
+#./configure
+#make libdir=/usr/lib64
+#make libdir=/usr/lib64 install
+#
+#
+#cd zlib-1.2.8
+#./configure
+#make && make install
+#
+#cd libpng-1.6.26 
+#cp scripts/makefile.std makefile
+#make libdir=/usr/lib64
+#make libdir=/usr/lib64 install
+#
+
+
+
