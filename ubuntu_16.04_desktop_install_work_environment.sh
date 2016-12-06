@@ -18,6 +18,9 @@ sudo apt-get install -y ssh
 # LSB is keep distribution to keep the organizational structure of the Linux Foundation to standardize the software system structure
 sudo apt-get install -y lsb-core || echo "--------------lsb-core install error"
 
+# install okular PDF
+sudo apt-get install -y okular
+
 
 # install zsh
 echo "安装 zsh start"
