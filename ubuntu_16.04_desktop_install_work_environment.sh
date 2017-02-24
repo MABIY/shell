@@ -54,6 +54,9 @@ curl -o chrome64.deb  https://dl.google.com/linux/direct/google-chrome-stable_cu
 echo "安装vitualbox" 
 curl -o virtualbox.deb http://download.virtualbox.org/virtualbox/5.1.6/virtualbox-5.1_5.1.6-110634~Ubuntu~xenial_amd64.deb && sudo dpkg -i virtualbox.deb
 
+echo "gpick 取色器安装"
+sudo apt-get install gpick
+
 echo "下载intelliJ Idea 并解压"
 curl --socks5-hostname localhost:1080 -L https://download-cf.jetbrains.com/idea/ideaIU-2016.2.4.tar.gz -o intell.tar.gz && mkdir -p ~/java && tar -zxvf intell.tar.gz -C ~/java
 echo "安装 maven"
