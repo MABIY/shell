@@ -78,3 +78,8 @@ curl -o tomcat9.tar.gz  || http://apachemirror.ovidiudan.com/tomcat/tomcat-9/v9.
 压tomcat9 失败"
 echo "fix depends"
 sudo apt-get -f install
+
+echo "关闭影响shutdown service"
+echo ji | sudo -S systemctl disable cups-browsed.service
+echo ji | sudo -S systemctl stop cups-browsed.service
+
