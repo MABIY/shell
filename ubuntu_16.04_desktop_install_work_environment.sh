@@ -51,6 +51,9 @@ sudo apt-get install -y sshpass
 echo "安装google-chrome"
 curl -o chrome64.deb  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo dpkg -i chrome64.deb
 
+echo "安装 图片编辑软件"
+sudo apt install gimp -y 
+
 echo "安装vitualbox" 
 curl -o virtualbox.deb http://download.virtualbox.org/virtualbox/5.1.6/virtualbox-5.1_5.1.6-110634~Ubuntu~xenial_amd64.deb && sudo dpkg -i virtualbox.deb
 
