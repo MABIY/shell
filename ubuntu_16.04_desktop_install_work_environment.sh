@@ -15,6 +15,9 @@ echo "更新系统 end"
 echo "安装ssd"
 sudo apt-get install -y ssh
 
+echo "安装sshPass"
+sudo apt-get install -y sshpass
+
 # LSB is keep distribution to keep the organizational structure of the Linux Foundation to standardize the software system structure
 sudo apt-get install -y lsb-core || echo "--------------lsb-core install error"
 
@@ -36,17 +39,12 @@ sudo apt-get install -y vim || echo "vim install error"
 
 echo "安装 sublime Text3 "
 curl -o sublime_text.deb https://download.sublimetext.com/sublime-text_build-3126_amd64.deb && sudo dpkg -i sublime_text.deb
-#echo "安装atom"
-#curl -L -o atom64.deb https://github.com/atom/atom/releases/download/v1.11.1/atom-amd64.deb
 
+#echo "安装翻墙 shadowsocks-qt5"
+#echo ji |sudo -S add-apt-repository ppa:hzwhuang/ss-qt5
+#sudo apt-get update
+#sudo apt-get install -y shadowsocks-qt5
 
-echo "安装翻墙 shadowsocks-qt5"
-echo ji |sudo -S add-apt-repository ppa:hzwhuang/ss-qt5
-sudo apt-get update
-sudo apt-get install -y shadowsocks-qt5
-
-echo "安装sshPass"
-sudo apt-get install -y sshpass
 
 echo "安装google-chrome"
 curl -o chrome64.deb  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo dpkg -i chrome64.deb
@@ -54,33 +52,33 @@ curl -o chrome64.deb  https://dl.google.com/linux/direct/google-chrome-stable_cu
 echo "安装 图片编辑软件"
 sudo apt install gimp -y 
 
-echo "安装vitualbox" 
-curl -o virtualbox.deb http://download.virtualbox.org/virtualbox/5.1.6/virtualbox-5.1_5.1.6-110634~Ubuntu~xenial_amd64.deb && sudo dpkg -i virtualbox.deb
+#echo "安装vitualbox" 
+#curl -o virtualbox.deb http://download.virtualbox.org/virtualbox/5.1.6/virtualbox-5.1_5.1.6-110634~Ubuntu~xenial_amd64.deb && sudo dpkg -i virtualbox.deb
 
 echo "gpick 取色器安装"
 sudo apt-get install gpick
 
-echo "下载intelliJ Idea 并解压"
-curl --socks5-hostname localhost:1080 -L https://download-cf.jetbrains.com/idea/ideaIU-2016.2.4.tar.gz -o intell.tar.gz && mkdir -p ~/java && tar -zxvf intell.tar.gz -C ~/java
-echo "安装 maven"
-sudo apt-get -y  install --no-install-recommends maven
+#echo "下载intelliJ Idea 并解压"
+#curl --socks5-hostname localhost:1080 -L https://download-cf.jetbrains.com/idea/ideaIU-2016.2.4.tar.gz -o intell.tar.gz && mkdir -p ~/java && tar -zxvf intell.tar.gz -C ~/java
+#echo "安装 maven"
+#sudo apt-get -y  install --no-install-recommends maven
 
 
-echo "下载jdk7 jdk8 并安装"
-curl -L -b "oraclelicense=a" http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-linux-x64.tar.gz -o jdk-8.tar.gz && mkdir -p ~/java/jdk-8u101 ; tar -zxvf jdk-8.tar.gz -C ~/java/jdk-8u101 --strip-components 1
-curl -L -b "oraclelicense=a" http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-linux-x64.tar.gz  -o jdk-7.tar.gz && mkdir ~/java/jdk-7u79 ; tar -zxvf jdk-7.tar.gz -C ~/java/jdk-7u79 --strip-components 1
-echo "配置java 环境变量"
-echo ji | sudo -S update-alternatives --install /usr/bin/java java ~/java/jdk-8u101/bin/java 320
-sudo update-alternatives --install /usr/bin/javac javac ~/java/jdk-8u101/bin/javac 320
-sudo update-alternatives --install /usr/bin/java java ~/java/jdk-7u79/bin/java 310
-sudo update-alternatives --install /usr/bin/javac javac ~/java/jdk-7u79/bin/javac 310
-
-echo "tomcat7 tomcat9 download and decompression"
-curl -o tomcat7.tar.gz http://mirror.its.dal.ca/apache/tomcat/tomcat-7/v7.0.72/bin/apache-tomcat-7.0.72.tar.gz && tar -zxvf tomcat7.tar.gz -C ~/java || "--------解压tomcat7 失败"
-curl -o tomcat9.tar.gz  || http://apachemirror.ovidiudan.com/tomcat/tomcat-9/v9.0.0.M11/bin/apache-tomcat-9.0.0.M11.tar.gz && tar -zxvf tomcat7.tar.gz -C ~/java || "--------解
-压tomcat9 失败"
-echo "fix depends"
-sudo apt-get -f install
+#echo "下载jdk7 jdk8 并安装"
+#curl -L -b "oraclelicense=a" http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-linux-x64.tar.gz -o jdk-8.tar.gz && mkdir -p ~/java/jdk-8u101 ; tar -zxvf jdk-8.tar.gz -C ~/java/jdk-8u101 --strip-components 1
+#curl -L -b "oraclelicense=a" http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-linux-x64.tar.gz  -o jdk-7.tar.gz && mkdir ~/java/jdk-7u79 ; tar -zxvf jdk-7.tar.gz -C ~/java/jdk-7u79 --strip-components 1
+#echo "配置java 环境变量"
+#echo ji | sudo -S update-alternatives --install /usr/bin/java java ~/java/jdk-8u101/bin/java 320
+#sudo update-alternatives --install /usr/bin/javac javac ~/java/jdk-8u101/bin/javac 320
+#sudo update-alternatives --install /usr/bin/java java ~/java/jdk-7u79/bin/java 310
+#sudo update-alternatives --install /usr/bin/javac javac ~/java/jdk-7u79/bin/javac 310
+#
+#echo "tomcat7 tomcat9 download and decompression"
+#curl -o tomcat7.tar.gz http://mirror.its.dal.ca/apache/tomcat/tomcat-7/v7.0.72/bin/apache-tomcat-7.0.72.tar.gz && tar -zxvf tomcat7.tar.gz -C ~/java || "--------解压tomcat7 失败"
+#curl -o tomcat9.tar.gz  || http://apachemirror.ovidiudan.com/tomcat/tomcat-9/v9.0.0.M11/bin/apache-tomcat-9.0.0.M11.tar.gz && tar -zxvf tomcat7.tar.gz -C ~/java || "--------解
+#压tomcat9 失败"
+#echo "fix depends"
+#sudo apt-get -f install
 
 echo "关闭影响shutdown service"
 echo ji | sudo -S systemctl disable cups-browsed.service
