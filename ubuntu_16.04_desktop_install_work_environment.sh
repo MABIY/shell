@@ -16,6 +16,13 @@ echo "install albert"
 sudo add-apt-repository ppa:noobslab/macbuntu -y
 sudo apt-get -y update 
 sudo apt-get -y install  albert
+echo "installed"
+
+echo "install greeen Recorder"
+sudo add-apt-repository ppa:fossproject/ppa -y
+sudo apt update -y 
+sudo apt install green-recorder -y
+echo "installed"
 
 echo "安装ssd"
 sudo apt-get install -y ssh
