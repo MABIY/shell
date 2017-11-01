@@ -12,6 +12,11 @@ sudo apt-get install -y git || "---------------install git fail "
 echo "更新系统 end"
 
 
+echo "install albert"
+echo "ji" | sudo -S sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_16.04/ /' > /etc/apt/sources.list.d/albert.list"
+sudo apt-get -y update 
+sudo apt-get -y install  albert
+
 echo "安装ssd"
 sudo apt-get install -y ssh
 
@@ -47,8 +52,10 @@ curl -o sublime_text.deb https://download.sublimetext.com/sublime-text_build-312
 
 
 echo "安装google-chrome"
-curl -o chrome64.deb  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo dpkg -i chrome64.deb
-
+sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/
+wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install google-chrome-stable
 echo "安装 图片编辑软件"
 sudo apt install gimp -y 
 
