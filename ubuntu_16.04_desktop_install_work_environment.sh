@@ -11,6 +11,10 @@ echo "install git"
 sudo apt-get install -y git || "---------------install git fail "
 echo "更新系统 end"
 
+echo "install curl"
+sudo apt-get install -y curl
+echo "installed curl"
+
 
 echo "install albert"
 sudo add-apt-repository ppa:noobslab/macbuntu -y
