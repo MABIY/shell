@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 # ubuntu16.04_desktop lh environment install shell script
 #更新系统
 
