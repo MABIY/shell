@@ -54,8 +54,10 @@ echo "oh my zsh安装结束"
 sudo apt-get install -y vim || echo "vim install error" 
 
 echo "安装 sublime Text3 "
-curl -o sublime_text.deb https://download.sublimetext.com/sublime-text_build-3126_amd64.deb && sudo dpkg -i sublime_text.deb
-
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt-get update -y
+sudo apt-get install sublime-text -y
 #echo "安装翻墙 shadowsocks-qt5"
 #echo ji |sudo -S add-apt-repository ppa:hzwhuang/ss-qt5
 #sudo apt-get update
