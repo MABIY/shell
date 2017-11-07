@@ -1,14 +1,15 @@
 !/bin/bash
 # ubuntu16.04_desktop lh environment install shell script
 #更新系统
-echo "set lh not need input passwd"
-echo 'lh ALL=NOPASSWD: ALL' | sudo  tee --append /etc/sudoers
 
 echo "更新系统 start"
 echo ji | sudo -S apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
 sudo apt-get autoremove
+
+echo "set lh not need input passwd"
+echo 'lh ALL=NOPASSWD: ALL' | sudo  tee --append /etc/sudoers
 
 
 echo "install git"
