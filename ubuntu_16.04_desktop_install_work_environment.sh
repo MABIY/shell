@@ -2,7 +2,7 @@
 # ubuntu16.04_desktop lh environment install shell script
 #更新系统
 echo "set lh not need input passwd"
-sudo echo "lh ALL=NOPASSWD: ALL" >> /etc/sudoers
+echo 'lh ALL=NOPASSWD: ALL' | sudo  tee --append /etc/sudoer
 
 echo "更新系统 start"
 echo ji | sudo -S apt-get -y update
