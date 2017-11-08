@@ -8,6 +8,9 @@ sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
 sudo apt-get autoremove
 
+echo  "Although GNOME Shell integration extension is running, native host connector is not detected"
+sudo apt-get install chrome-gnome-shell -y
+
 echo "set lh not need input passwd"
 echo 'lh ALL=NOPASSWD: ALL' | sudo  tee --append /etc/sudoers
 
