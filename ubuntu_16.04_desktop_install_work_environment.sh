@@ -8,6 +8,9 @@ sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
 sudo apt-get autoremove
 
+echo "安装文泉驿微黑字体库"
+sudo  apt  install ttf-wqy-microhei -y
+
 echo  "Although GNOME Shell integration extension is running, native host connector is not detected"
 sudo apt-get install chrome-gnome-shell -y
 
