@@ -93,6 +93,10 @@ sudo apt-get install gpick
 #curl --socks5-hostname localhost:1080 -L https://download-cf.jetbrains.com/idea/ideaIU-2016.2.4.tar.gz -o intell.tar.gz && mkdir -p ~/java && tar -zxvf intell.tar.gz -C ~/java
 #echo "安装 maven"
 #sudo apt-get -y  install --no-install-recommends maven
+#echo "install griven2"
+sudo add-apt-repository ppa:nilarimogard/webupd8 -y
+sudo apt-get update
+sudo apt-get install grive
 
 
 #echo "下载jdk7 jdk8 并安装"
