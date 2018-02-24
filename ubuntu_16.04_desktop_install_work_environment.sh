@@ -89,7 +89,7 @@ sudo apt install gimp -y
 echo "gpick 取色器安装"
 sudo apt-get install gpick
 
-echo "mplayer 视屏家属播放器 【加速 】减速"
+echo "mplayer 视屏家属播放器 ]加速 [减速"
 sudo apt-get install mplayer -y
 #echo "下载intelliJ Idea 并解压"
 #curl --socks5-hostname localhost:1080 -L https://download-cf.jetbrains.com/idea/ideaIU-2016.2.4.tar.gz -o intell.tar.gz && mkdir -p ~/java && tar -zxvf intell.tar.gz -C ~/java
