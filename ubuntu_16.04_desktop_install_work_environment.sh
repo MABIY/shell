@@ -90,6 +90,7 @@ echo "gpick 取色器安装"
 sudo apt-get install gpick
 
 echo "smplayer是基于mplayer的一个图形化前端 ]加速 [减速"
+sudo apt install -y mplayer
 sudo apt install -y smplayer
 #echo "下载intelliJ Idea 并解压"
 #curl --socks5-hostname localhost:1080 -L https://download-cf.jetbrains.com/idea/ideaIU-2016.2.4.tar.gz -o intell.tar.gz && mkdir -p ~/java && tar -zxvf intell.tar.gz -C ~/java
