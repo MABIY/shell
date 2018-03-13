@@ -99,7 +99,7 @@ sudo apt install -y smplayer
 #echo "install griven2"
 sudo add-apt-repository ppa:nilarimogard/webupd8 -y
 sudo apt-get update
-sudo apt-get install grive
+sudo apt-get install grive -y
 
 
 #echo "下载jdk7 jdk8 并安装"
