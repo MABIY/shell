@@ -29,6 +29,7 @@ echo "installed curl"
 
 echo "install albert"
 sudo add-apt-repository ppa:noobslab/macbuntu -y
+sudo add-apt-repository ppa:git-core/ppa -y
 sudo apt-get -y update 
 sudo apt-get -y install  albert
 echo "installed"
