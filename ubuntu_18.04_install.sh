@@ -68,6 +68,9 @@ echo "install rar"
 sudo apt install -y rar
 echo "install rar finish"
 
+echo "install redis tools"
+sudo apt-get install redis-tools -y
+
 echo "install privoxy"
 sudo apt install -y privoxy
 
