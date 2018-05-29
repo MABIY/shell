@@ -81,6 +81,21 @@ echo "smplayer是基于mplayer的一个图形化前端 ]加速 [减速"
 sudo apt install -y mplayer
 sudo apt install -y smplayer
 
+sudo apt install -y mysql-server-5.7 
+
+sudo apt install -y shadowsocks
+
+sudo wget -nv -O Release.key \
+>   https://build.opensuse.org/projects/home:manuelschneid3r/public_key
+
+sudo apt-key add - < Release.key
+
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.04/ /' > /etc/apt/sources.list.d/home:manuelschneid3r.list"
+sudo apt-get update
+sudo apt-get install albert -y
+
+sudo apt-get install chrome-gnome-shell -y
+
 echo "install grive2"
 sudo apt-get install git cmake build-essential libgcrypt11-dev libyajl-dev \
     libboost-all-dev libcurl4-openssl-dev libexpat1-dev libcppunit-dev binutils-dev \
