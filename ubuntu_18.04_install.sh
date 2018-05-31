@@ -18,6 +18,18 @@ echo "install curl"
 sudo apt-get install -y curl
 echo "installed curl"
 
+echo "install chrome-gnome-shell"
+sudo apt-get install chrome-gnome-shell
+
+echo "gnome-tweak-tool"
+sudo apt install -y gnome-tweak-tool
+
+echo "tree"
+sudo apt install -y tree
+
+echo "shadowsocks"
+sudo apt install -y shadowsocks
+
 echo "install albert"
 sudo apt install -y sshpass
 sudo apt install -y wget
