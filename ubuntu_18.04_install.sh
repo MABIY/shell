@@ -129,3 +129,4 @@ sudo apt-get update
 sudo apt-get install sublime-text
 #安装终端 terminator
 sudo apt-get install terminator
+#docker pull ilanyu/golang-reverseproxy
