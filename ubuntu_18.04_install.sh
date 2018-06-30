@@ -132,4 +132,5 @@ sudo apt-get install terminator -y
 #docker pull ilanyu/golang-reverseproxy
 
 sudo apt install -y retext -y
-
+#将字符串在终端生成一个logo的终端工具
+sudo apt install -y figlet
