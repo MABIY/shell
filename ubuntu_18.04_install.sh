@@ -33,14 +33,14 @@ sudo apt install -y shadowsocks
 echo "install albert"
 sudo apt install -y sshpass
 sudo apt install -y wget
-#wget -nv -O Release.key https://build.opensuse.org/projects/home:manuelschneid3r/public_key 
-#sudo apt-key add - < Release.key
-#sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.04/ /' > /etc/apt/sources.list.d/home:manuelschneid3r.list"
-#sudo apt-get update
-#sudo apt-get install albert -y
+wget -nv -O Release.key https://build.opensuse.org/projects/home:manuelschneid3r/public_key 
+sudo apt-key add - < Release.key
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.04/ /' > /etc/apt/sources.list.d/home:manuelschneid3r.list"
+sudo apt-get update
+sudo apt-get install albert -y
 #
 #echo "安装ssd"
-#sudo apt-get install -y ssh
+sudo apt-get install -y ssh
 
 # LSB is keep distribution to keep the organizational structure of the Linux Foundation to standardize the software system structure
 sudo apt-get install -y lsb-core || echo "--------------lsb-core install error"
