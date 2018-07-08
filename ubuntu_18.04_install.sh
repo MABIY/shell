@@ -128,7 +128,7 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sou
 sudo apt-get update
 sudo apt-get install sublime-text
 #安装终端 terminator
-sudo apt-get install terminator -y
+sudo apt-get install tmux -y
 #docker pull ilanyu/golang-reverseproxy
 
 sudo apt install -y retext -y
