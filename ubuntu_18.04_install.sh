@@ -138,3 +138,6 @@ sudo apt install -y figlet
 #下载工具
 sudo apt install uget
 sudo apt install aria2
+
+#桌面环境配置
+gsettings set org.gnome.desktop.wm.keybindings panel-main-menu "[]" # disable Alt+F1
