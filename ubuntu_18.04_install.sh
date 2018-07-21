@@ -146,5 +146,5 @@ sudo apt install -y meld
 gsettings set org.gnome.desktop.wm.keybindings panel-main-menu "[]" # disable Alt+F1
 
 # install git tools ctrl+shift+p
-sudo add-apt-repository ppa:peek-developers/stable
+sudo add-apt-repository ppa:peek-developers/stable -y
 sudo apt install -y peek
