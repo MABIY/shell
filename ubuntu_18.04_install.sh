@@ -150,3 +150,5 @@ gsettings set org.gnome.desktop.wm.keybindings panel-main-menu "[]" # disable Al
 # install git tools ctrl+shift+p
 sudo add-apt-repository ppa:peek-developers/stable -y
 sudo apt install -y peek
+# 快速关闭程序工具
+sudo apt install -y plank
