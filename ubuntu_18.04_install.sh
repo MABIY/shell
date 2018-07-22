@@ -59,6 +59,8 @@ echo ji | chsh -s `which zsh`
 echo "oh my zsh安装结束"
 
 sudo apt-get install -y vim || echo "vim install error"
+echo "install vim-gtk of share clipboard"
+sudo apt install -y vim-gtk 
 
 echo "compizconfig"
 sudo apt install -y compizconfig-settings-manager
