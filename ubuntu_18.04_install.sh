@@ -152,3 +152,5 @@ sudo add-apt-repository ppa:peek-developers/stable -y
 sudo apt install -y peek
 # 快速关闭程序工具
 sudo apt install -y plank
+# kchmviewer
+sudo apt-get install kchmviewer
