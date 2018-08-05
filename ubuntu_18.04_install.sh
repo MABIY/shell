@@ -154,3 +154,5 @@ sudo apt install -y peek
 sudo apt install -y plank
 # kchmviewer
 sudo apt-get install kchmviewer
+#oh my zsh copydir 
+sudo apt install -y xclip
