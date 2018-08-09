@@ -156,3 +156,5 @@ sudo apt install -y plank
 sudo apt-get install kchmviewer
 #oh my zsh copydir 
 sudo apt install -y xclip
+#back picture 
+sudo apt-get install variety
