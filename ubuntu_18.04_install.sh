@@ -158,3 +158,5 @@ sudo apt-get install kchmviewer
 sudo apt install -y xclip
 #back picture 
 sudo apt-get install variety
+# npm install embed-images -g (https://github.com/freeman-lab/embed-images)
+# embed-images example.md > new.md
