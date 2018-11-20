@@ -147,6 +147,9 @@ sudo apt install aria2
 # 比对工具
 sudo apt install -y meld
 
+#windows远程链接功能
+sudo apt install xrdp
+
 #桌面环境配置
 gsettings set org.gnome.desktop.wm.keybindings panel-main-menu "[]" # disable Alt+F1
 
