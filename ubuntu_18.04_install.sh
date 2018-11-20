@@ -133,6 +133,9 @@ sudo apt-get install sublime-text
 sudo apt-get install tmux -y
 #docker pull ilanyu/golang-reverseproxy
 
+#终端下查询系统配置信息。
+sudo apt install neofetch -y
+
 sudo apt install -y retext -y
 #将字符串在终端生成一个logo的终端工具
 sudo apt install -y figlet
