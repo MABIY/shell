@@ -166,3 +166,6 @@ sudo apt install -y xclip
 sudo apt-get install variety
 # npm install embed-images -g (https://github.com/freeman-lab/embed-images)
 # embed-images example.md > new.md
+# improve tools start speed
+sudo apt-get install preload -y
+
