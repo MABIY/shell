@@ -168,4 +168,10 @@ sudo apt-get install variety
 # embed-images example.md > new.md
 # improve tools start speed
 sudo apt-get install preload -y
+# markdown editor
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE -y
+sudo add-apt-repository 'deb https://typora.io/linux ./' -y
+sudo apt-get install typora -y
+
+
 
