@@ -166,3 +166,7 @@ sudo apt install -y xclip
 sudo apt-get install variety
 # npm install embed-images -g (https://github.com/freeman-lab/embed-images)
 # embed-images example.md > new.md
+# install green recorder
+sudo add-apt-repository ppa:fossproject/ppa -y
+sudo apt update
+sudo apt install green-recorder -y
