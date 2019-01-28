@@ -9,7 +9,6 @@ echo ji | sudo -S apt-get autoremove -y
 
 echo "set lh not need input passwd"
 echo 'lh ALL=NOPASSWD: ALL' | sudo  tee --append /etc/sudoers
-sudo source /etc/sudoers
 
 echo "install git"
 sudo apt-get install -y git || "---------------install git fail "
