@@ -19,7 +19,7 @@ sudo apt-get install -y curl
 echo "installed curl"
 
 echo "install chrome-gnome-shell"
-sudo apt-get install chrome-gnome-shell
+sudo apt-get install -y chrome-gnome-shell 
 
 echo "gnome-tweak-tool"
 sudo apt install -y gnome-tweak-tool
@@ -33,11 +33,9 @@ sudo apt install -y shadowsocks
 echo "install albert"
 sudo apt install -y sshpass
 sudo apt install -y wget
-wget -nv -O Release.key https://build.opensuse.org/projects/home:manuelschneid3r/public_key 
-sudo apt-key add - < Release.key
-sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.04/ /' > /etc/apt/sources.list.d/home:manuelschneid3r.list"
-sudo apt-get update
-sudo apt-get install albert -y
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.10/ /' > /etc/apt/sources.list.d/home:manuelschneid3r.list"
+sudo apt-get update -y
+sudo apt-get install albert
 #
 #echo "安装ssd"
 sudo apt-get install -y ssh
@@ -53,10 +51,7 @@ echo "安装 zsh start"
 sudo apt-get install -y zsh || echo "------------zsh install erro"
 
 echo "install oh my zsh"
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" || echo "---------------"
-echo "设置默认shell"
-echo ji | chsh -s `which zsh`
-echo "oh my zsh安装结束"
+echo ji | sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && exit
 
 sudo apt-get install -y vim || echo "vim install error"
 echo "install vim-gtk of share clipboard"
@@ -89,7 +84,7 @@ echo "install privoxy"
 sudo apt install -y privoxy
 
 echo "gpick 取色器安装"
-sudo apt-get install gpick
+sudo apt-get install gpick -y 
 
 echo "smplayer是基于mplayer的一个图形化前端 ]加速 [减速"
 sudo apt install -y mplayer
@@ -128,7 +123,7 @@ echo "sublime text3"
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo apt-get update
-sudo apt-get install sublime-text
+sudo apt-get install sublime-text -y
 #安装终端 terminator
 sudo apt-get install tmux -y
 #docker pull ilanyu/golang-reverseproxy
@@ -141,14 +136,14 @@ sudo apt install -y retext -y
 sudo apt install -y figlet
 
 #下载工具
-sudo apt install uget
-sudo apt install aria2
+sudo apt install uget -y
+sudo apt install aria2 -y
 
 # 比对工具
 sudo apt install -y meld
 
 #windows远程链接功能
-sudo apt install xrdp
+sudo apt install xrdp -y
 
 #桌面环境配置
 gsettings set org.gnome.desktop.wm.keybindings panel-main-menu "[]" # disable Alt+F1
@@ -159,11 +154,11 @@ sudo apt install -y peek
 # 快速关闭程序工具
 sudo apt install -y plank
 # kchmviewer
-sudo apt-get install kchmviewer
+sudo apt-get install kchmviewer -y
 #oh my zsh copydir 
 sudo apt install -y xclip
 #back picture 
-sudo apt-get install variety
+sudo apt-get install variety -y
 # npm install embed-images -g (https://github.com/freeman-lab/embed-images)
 # embed-images example.md > new.md
 # improve tools start speed
