@@ -1,17 +1,17 @@
 #!/bin/bash
 
-#更新系统
-echo "更新系统 start"
-echo ji | sudo -S apt-get -y update
-echo ji | sudo -S apt-get -y upgrade
-echo ji | sudo -S apt-get -y dist-upgrade
-echo ji | sudo -S apt-get autoremove -y
-
 echo "set lh not need input passwd"
 echo 'lh ALL=NOPASSWD: ALL' | sudo  tee --append /etc/sudoers
+#更新系统
+echo "更新系统 start"
+sudo  apt-get -y update
+sudo  apt-get -y upgrade
+sudo  apt-get -y dist-upgrade
+sudo  apt-get -y autoremove 
+
 
 echo "install git"
-sudo apt-get install -y git || "---------------install git fail "
+sudo apt-get install -y git 
 echo "更新系统 end"
 
 echo "install curl"
