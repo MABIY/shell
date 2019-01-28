@@ -3,12 +3,13 @@
 #更新系统
 echo "更新系统 start"
 echo ji | sudo -S apt-get -y update
-sudo apt-get -y upgrade
-sudo apt-get -y dist-upgrade
-sudo apt-get autoremove
+echo ji | sudo -S apt-get -y upgrade
+echo ji | sudo -S apt-get -y dist-upgrade
+echo ji | sudo -S apt-get autoremove -y
 
 echo "set lh not need input passwd"
 echo 'lh ALL=NOPASSWD: ALL' | sudo  tee --append /etc/sudoers
+sudo source /etc/sudoers
 
 echo "install git"
 sudo apt-get install -y git || "---------------install git fail "
