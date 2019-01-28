@@ -51,7 +51,7 @@ echo "安装 zsh start"
 sudo apt-get install -y zsh || echo "------------zsh install erro"
 
 echo "install oh my zsh"
-echo ji | sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && exit
+echo ji | sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 sudo apt-get install -y vim || echo "vim install error"
 echo "install vim-gtk of share clipboard"
