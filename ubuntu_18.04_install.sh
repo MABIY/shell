@@ -1,17 +1,17 @@
 #!/bin/bash
 
-#更新系统
-echo "更新系统 start"
-echo ji | sudo -S apt-get -y update
-sudo apt-get -y upgrade
-sudo apt-get -y dist-upgrade
-sudo apt-get autoremove
-
 echo "set lh not need input passwd"
 echo 'lh ALL=NOPASSWD: ALL' | sudo  tee --append /etc/sudoers
+#更新系统
+echo "更新系统 start"
+sudo  apt-get -y update
+sudo  apt-get -y upgrade
+sudo  apt-get -y dist-upgrade
+sudo  apt-get -y autoremove 
+
 
 echo "install git"
-sudo apt-get install -y git || "---------------install git fail "
+sudo apt-get install -y git 
 echo "更新系统 end"
 
 echo "install curl"
@@ -19,7 +19,7 @@ sudo apt-get install -y curl
 echo "installed curl"
 
 echo "install chrome-gnome-shell"
-sudo apt-get install chrome-gnome-shell
+sudo apt-get install -y chrome-gnome-shell 
 
 echo "gnome-tweak-tool"
 sudo apt install -y gnome-tweak-tool
@@ -33,11 +33,9 @@ sudo apt install -y shadowsocks
 echo "install albert"
 sudo apt install -y sshpass
 sudo apt install -y wget
-wget -nv -O Release.key https://build.opensuse.org/projects/home:manuelschneid3r/public_key 
-sudo apt-key add - < Release.key
 sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.04/ /' > /etc/apt/sources.list.d/home:manuelschneid3r.list"
 sudo apt-get update
-sudo apt-get install albert -y
+sudo apt-get install albert
 #
 #echo "安装ssd"
 sudo apt-get install -y ssh
@@ -53,10 +51,7 @@ echo "安装 zsh start"
 sudo apt-get install -y zsh || echo "------------zsh install erro"
 
 echo "install oh my zsh"
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" || echo "---------------"
-echo "设置默认shell"
-echo ji | chsh -s `which zsh`
-echo "oh my zsh安装结束"
+echo ji | sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 sudo apt-get install -y vim || echo "vim install error"
 echo "install vim-gtk of share clipboard"
@@ -89,7 +84,7 @@ echo "install privoxy"
 sudo apt install -y privoxy
 
 echo "gpick 取色器安装"
-sudo apt-get install gpick
+sudo apt-get install gpick -y 
 
 echo "smplayer是基于mplayer的一个图形化前端 ]加速 [减速"
 sudo apt install -y mplayer
@@ -103,10 +98,6 @@ sudo wget -nv -O Release.key \
 >   https://build.opensuse.org/projects/home:manuelschneid3r/public_key
 
 sudo apt-key add - < Release.key
-
-sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.04/ /' > /etc/apt/sources.list.d/home:manuelschneid3r.list"
-sudo apt-get update
-sudo apt-get install albert -y
 
 sudo apt-get install chrome-gnome-shell -y
 
@@ -124,11 +115,6 @@ sudo make install
 rm -rf ~/grive2
 echo "success install grive2"
 
-echo "sublime text3"
-wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-sudo apt-get update
-sudo apt-get install sublime-text
 #安装终端 terminator
 sudo apt-get install tmux -y
 #docker pull ilanyu/golang-reverseproxy
@@ -141,14 +127,14 @@ sudo apt install -y retext -y
 sudo apt install -y figlet
 
 #下载工具
-sudo apt install uget
-sudo apt install aria2
+sudo apt install uget -y
+sudo apt install aria2 -y
 
 # 比对工具
 sudo apt install -y meld
 
 #windows远程链接功能
-sudo apt install xrdp
+sudo apt install xrdp -y
 
 #桌面环境配置
 gsettings set org.gnome.desktop.wm.keybindings panel-main-menu "[]" # disable Alt+F1
@@ -159,14 +145,36 @@ sudo apt install -y peek
 # 快速关闭程序工具
 sudo apt install -y plank
 # kchmviewer
-sudo apt-get install kchmviewer
+sudo apt-get install kchmviewer -y
 #oh my zsh copydir 
 sudo apt install -y xclip
 #back picture 
-sudo apt-get install variety
+sudo apt-get install variety -y
 # npm install embed-images -g (https://github.com/freeman-lab/embed-images)
 # embed-images example.md > new.md
+<<<<<<< HEAD
 # install green recorder
 sudo add-apt-repository ppa:fossproject/ppa -y
 sudo apt update
 sudo apt install green-recorder -y
+=======
+# improve tools start speed
+sudo apt-get install preload -y
+# markdown editor
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE -y
+sudo add-apt-repository 'deb https://typora.io/linux ./' -y
+sudo apt-get install typora -y
+##### install from use device####
+cp -rf /home/lh/tmp/developer_environment/java ~/
+tar -zxvf ~/java/jdk/jdk-8u151-linux-x64.tar.gz -C ~/java/jdk/
+tar -zxvf ~/java/jdk/jdk-7u80-linux-x64.tar.gz -C ~/java/jdk/
+tar -zxvf ~/java/web_server/apache-tomcat-7.0.88.tar.gz -C ~/java/web_server/
+tar -zxvf ~/java/web_server/apache-tomcat-8.5.28.tar.gz -C ~/java/web_server/
+unzip ~/java/build_tools/gradle-5.1.1-all.zip -d ~/java/build_tools/
+unzip ~/java/build_tools/apache-maven-3.6.0-bin.zip -d ~/java/build_tools/
+echo ji |sudo update-alternatives --install /usr/bin/java java ~/java/jdk/jdk1.8.0_151/bin/java 400
+echo ji |sudo update-alternatives --install /usr/bin/javac javac ~/java/jdk/jdk1.8.0_151/bin/javac 400
+echo ji |sudo update-alternatives --install /usr/bin/java java ~/java/jdk/jdk1.7.0_80/bin/java 300
+echo ji |sudo update-alternatives --install /usr/bin/javac javac ~/java/jdk/jdk1.7.0_80/bin/javac 300
+echo ji |sudo update-alternatives --install /usr/bin/mvn mvn ~/java/build_tools/apache-maven-3.6.0/bin/mvn 300
+echo ji |sudo update-alternatives --install /usr/bin/gradle gradle  ~/java/build_tools/gradle-5.1.1/bin/gradle 300
