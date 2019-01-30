@@ -162,7 +162,6 @@ sudo apt-get install typora -y
 cp -rf /home/lh/tmp/developer_environment/java ~/
 tar -zxvf ~/java/jdk-8u151-linux-x64.tar.gz -C ~/java/jdk/
 tar -zxvf ~/java/jdk-7u80-linux-x64.tar.gz -C ~/java/jdk/
-tar -zxvf ~/java/build_tools/apache-maven-3.5.3-bin.tar.gz ~/java/build_tools/
 
 
 
