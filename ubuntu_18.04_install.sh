@@ -33,8 +33,8 @@ sudo apt install -y shadowsocks
 echo "install albert"
 sudo apt install -y sshpass
 sudo apt install -y wget
-sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.10/ /' > /etc/apt/sources.list.d/home:manuelschneid3r.list"
-sudo apt-get update -y
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.04/ /' > /etc/apt/sources.list.d/home:manuelschneid3r.list"
+sudo apt-get update
 sudo apt-get install albert
 #
 #echo "安装ssd"
