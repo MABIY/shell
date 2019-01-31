@@ -28,7 +28,23 @@ echo "tree"
 sudo apt install -y tree
 
 echo "shadowsocks"
-sudo apt install -y shadowsocks
+sudo apt install -y shadowsocks && sudo cp  /home/lh/tmp/shadowsocks.json  /etc/
+sudo sh -c 'cat > /etc/systemd/system/shadowsocks.service <<EOF
+[Unit]
+Description=Shadowsocks Client Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/sslocal -c /etc/shadowsocks.json
+
+[Install]
+WantedBy=multi-user.target
+EOF'
+sudo systemctl enable /etc/systemd/system/shadowsocks.service
+
+
 
 echo "install albert"
 sudo apt install -y sshpass
@@ -82,6 +98,8 @@ sudo apt-get install redis-tools -y
 
 echo "install privoxy"
 sudo apt install -y privoxy
+sudo sh -c "echo 'forward-socks5 / 127.0.0.1:1080 .' >> /etc/privoxy/config"
+sudo systemctl start privoxy.service
 
 echo "gpick 取色器安装"
 sudo apt-get install gpick -y 
@@ -91,8 +109,6 @@ sudo apt install -y mplayer
 sudo apt install -y smplayer
 
 sudo apt install -y mysql-server-5.7 
-
-sudo apt install -y shadowsocks
 
 sudo wget -nv -O Release.key \
 >   https://build.opensuse.org/projects/home:manuelschneid3r/public_key
