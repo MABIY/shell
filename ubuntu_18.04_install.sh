@@ -44,6 +44,23 @@ WantedBy=multi-user.target
 EOF'
 sudo systemctl enable /etc/systemd/system/shadowsocks.service
 
+echo "input custom alias export"
+sudo sh -c "cat >> /home/lh/.zshrc <<EOF
+alias datef=\"date '+%Y%m%d'\"
+alias gdate=\"print -n `datef` | clipcopy\"
+alias gpu=\"grive -p /home/lh/grive/\"
+alias pu=\"git add -A && git commit -m  \"..\" && git push\"
+alias rb=\"echo ji | sudo sync;sudo sync;sudo sync;sudo -S reboot\"
+alias sd=\"gpu && sudo sync&&sudo sync&& sudo sync&&sudo -S shutdown -h 0\"
+alias leanjava=\"idea ~/project/learn_java\"
+alias killmw=\"killall -9 mysql-workbench-bin\"
+alias noproxy=\"unset http_proxy && unset https_proxy\"
+alias killwx=\"killall -9 electronic-wechat\"
+export https_proxy='https://0.0.0.0:7118'
+export http_proxy='http://0.0.0.0:7118'
+export https_proxy=socks5://127.0.0.1:1080
+EOF"
+
 echo "install albert"
 sudo apt install -y sshpass
 sudo apt install -y wget
@@ -72,7 +89,7 @@ oIPuD7rh4nc6sxvZBjTsjpBahgee
 sudo apt-key add - < Release.key
 sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.04/ /' > /etc/apt/sources.list.d/home:manuelschneid3r.list"
 sudo apt-get update
-sudo apt-get install albert
+sudo apt-get install albert -y
 #echo "安装ssd"
 sudo apt-get install -y ssh
 
@@ -221,3 +238,5 @@ sudo dpkg -i ~/java/other/atom-amd64.deb
 sudo dpkg -i ~/java/other/sublime-text_build-3188_amd64.deb
 sudo dpkg -i ~/java/other/sogoupinyin_2.2.0.0108_amd64.deb
 sudo apt install -y -f
+
+
