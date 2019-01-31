@@ -170,11 +170,18 @@ tar -zxvf ~/java/jdk/jdk-8u151-linux-x64.tar.gz -C ~/java/jdk/
 tar -zxvf ~/java/jdk/jdk-7u80-linux-x64.tar.gz -C ~/java/jdk/
 tar -zxvf ~/java/web_server/apache-tomcat-7.0.88.tar.gz -C ~/java/web_server/
 tar -zxvf ~/java/web_server/apache-tomcat-8.5.28.tar.gz -C ~/java/web_server/
+tar -zxvf ~/java/idea/ideaIU-2018.3.tar.gz -C ~/java/idea/
+tar -zxvf ~/java/git/smartgit-linux-18_2_5.tar.gz -C ~/java/git/
+echo "-javaagent:/home/lh/java/idea/jetbrains-agent.jar">> ~/java/idea/idea-IU-183.4284.148/bin/idea64.vmoptions
 unzip ~/java/build_tools/gradle-5.1.1-all.zip -d ~/java/build_tools/
 unzip ~/java/build_tools/apache-maven-3.6.0-bin.zip -d ~/java/build_tools/
-echo ji |sudo update-alternatives --install /usr/bin/java java ~/java/jdk/jdk1.8.0_151/bin/java 400
-echo ji |sudo update-alternatives --install /usr/bin/javac javac ~/java/jdk/jdk1.8.0_151/bin/javac 400
-echo ji |sudo update-alternatives --install /usr/bin/java java ~/java/jdk/jdk1.7.0_80/bin/java 300
-echo ji |sudo update-alternatives --install /usr/bin/javac javac ~/java/jdk/jdk1.7.0_80/bin/javac 300
-echo ji |sudo update-alternatives --install /usr/bin/mvn mvn ~/java/build_tools/apache-maven-3.6.0/bin/mvn 300
-echo ji |sudo update-alternatives --install /usr/bin/gradle gradle  ~/java/build_tools/gradle-5.1.1/bin/gradle 300
+sudo update-alternatives --install /usr/bin/java java ~/java/jdk/jdk1.8.0_151/bin/java 400
+sudo update-alternatives --install /usr/bin/javac javac ~/java/jdk/jdk1.8.0_151/bin/javac 400
+sudo update-alternatives --install /usr/bin/java java ~/java/jdk/jdk1.7.0_80/bin/java 300
+sudo update-alternatives --install /usr/bin/javac javac ~/java/jdk/jdk1.7.0_80/bin/javac 300
+sudo update-alternatives --install /usr/bin/mvn mvn ~/java/build_tools/apache-maven-3.6.0/bin/mvn 300
+sudo update-alternatives --install /usr/bin/gradle gradle  ~/java/build_tools/gradle-5.1.1/bin/gradle 300
+sudo dpkg -i ~/java/other/atom-amd64.deb
+sudo dpkg -i ~/java/other/sublime-text_build-3188_amd64.deb
+sudo dpkg -i ~/java/other/sogoupinyin_2.2.0.0108_amd64.deb
+sudo apt install -y -f
