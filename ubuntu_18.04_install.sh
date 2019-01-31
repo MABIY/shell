@@ -47,10 +47,11 @@ sudo systemctl enable /etc/systemd/system/shadowsocks.service
 echo "install albert"
 sudo apt install -y sshpass
 sudo apt install -y wget
+wget -nv https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_18.04/Release.key -O Release.key
+sudo apt-key add - < Release.key
 sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.04/ /' > /etc/apt/sources.list.d/home:manuelschneid3r.list"
 sudo apt-get update
 sudo apt-get install albert
-#
 #echo "安装ssd"
 sudo apt-get install -y ssh
 
