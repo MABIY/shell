@@ -166,6 +166,7 @@ cmake ..
 make -j4
 sudo make install
 rm -rf ~/grive2
+cd ~/
 echo "success install grive2"
 
 #安装终端 terminator
