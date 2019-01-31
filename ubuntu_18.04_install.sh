@@ -44,8 +44,6 @@ WantedBy=multi-user.target
 EOF'
 sudo systemctl enable /etc/systemd/system/shadowsocks.service
 
-
-
 echo "install albert"
 sudo apt install -y sshpass
 sudo apt install -y wget
@@ -168,12 +166,12 @@ sudo apt install -y xclip
 sudo apt-get install variety -y
 # npm install embed-images -g (https://github.com/freeman-lab/embed-images)
 # embed-images example.md > new.md
-<<<<<<< HEAD
+
 # install green recorder
 sudo add-apt-repository ppa:fossproject/ppa -y
 sudo apt update
 sudo apt install green-recorder -y
-=======
+
 # improve tools start speed
 sudo apt-get install preload -y
 # markdown editor
