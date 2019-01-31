@@ -215,8 +215,9 @@ sudo apt install green-recorder -y
 # improve tools start speed
 sudo apt-get install preload -y
 # markdown editor
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE -y
+wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
 sudo add-apt-repository 'deb https://typora.io/linux ./' -y
+sudo apt-get update
 sudo apt-get install typora -y
 ##### install from use device####
 cp -rf /home/lh/tmp/developer_environment/java ~/
@@ -235,9 +236,8 @@ sudo update-alternatives --install /usr/bin/java java ~/java/jdk/jdk1.7.0_80/bin
 sudo update-alternatives --install /usr/bin/javac javac ~/java/jdk/jdk1.7.0_80/bin/javac 300
 sudo update-alternatives --install /usr/bin/mvn mvn ~/java/build_tools/apache-maven-3.6.0/bin/mvn 300
 sudo update-alternatives --install /usr/bin/gradle gradle  ~/java/build_tools/gradle-5.1.1/bin/gradle 300
+cp ~/tmp/.netrc ~/
 sudo dpkg -i ~/java/other/atom-amd64.deb
-sudo dpkg -i ~/java/other/sublime-text_build-3188_amd64.deb
 sudo dpkg -i ~/java/other/sogoupinyin_2.2.0.0108_amd64.deb
 sudo apt install -y -f
-
 
