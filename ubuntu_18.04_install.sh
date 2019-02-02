@@ -189,6 +189,10 @@ sudo apt install -y meld
 
 #windows远程链接功能
 sudo apt install xrdp -y
+line=`sudo cat /etc/xrdp/startwm.sh |wc -l`
+linel2=`expr $line - 1`
+sudo sed -i "$linel2","$line"s/^/#/ /etc/xrdp/startwm.sh
+sudo sh -c  'echo "gnome-session" >> /etc/xrdp/startwm.sh'
 
 #桌面环境配置
 gsettings set org.gnome.desktop.wm.keybindings panel-main-menu "[]" # disable Alt+F1
