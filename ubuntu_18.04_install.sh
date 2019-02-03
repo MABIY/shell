@@ -273,3 +273,7 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 sudo groupadd docker
 sudo usermod -aG docker $USER
+sudo docker network create --subnet=172.18.0.0/16 mynet
+sudo docker run -d --net mynet --ip 172.18.0.22  --restart=always -p 7111:8888 ilanyu/golang-reverseproxy
+
+
