@@ -46,22 +46,6 @@ WantedBy=multi-user.target
 EOF'
 sudo systemctl enable /etc/systemd/system/shadowsocks.service
 
-echo "input custom alias export"
-sudo sh -c "cat >> /home/lh/.zshrc <<EOF
-alias datef=\"date '+%Y%m%d'\"
-alias gdate=\"print -n `datef` | clipcopy\"
-alias gpu=\"grive -p /home/lh/grive/\"
-alias pu=\"git add -A && git commit -m  \"..\" && git push\"
-alias rb=\"echo ji | sudo sync;sudo sync;sudo sync;sudo -S reboot\"
-alias sd=\"gpu && sudo sync&&sudo sync&& sudo sync&&sudo -S shutdown -h 0\"
-alias leanjava=\"idea ~/project/learn_java\"
-alias killmw=\"killall -9 mysql-workbench-bin\"
-alias noproxy=\"unset http_proxy && unset https_proxy\"
-alias killwx=\"killall -9 electronic-wechat\"
-export https_proxy='https://0.0.0.0:7118'
-export http_proxy='http://0.0.0.0:7118'
-export https_proxy=socks5://127.0.0.1:1080
-EOF"
 
 echo "install albert"
 sudo apt install -y sshpass
@@ -107,6 +91,22 @@ sudo apt-get install -y zsh || echo "------------zsh install erro"
 
 echo "install oh my zsh"
 echo ji | sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+echo "input custom alias export"
+sudo sh -c "cat >> /home/lh/.zshrc <<EOF
+alias datef=\"date '+%Y%m%d'\"
+alias gdate=\"print -n `datef` | clipcopy\"
+alias gpu=\"grive -p /home/lh/grive/\"
+alias pu=\"git add -A && git commit -m  \"..\" && git push\"
+alias rb=\"echo ji | sudo sync;sudo sync;sudo sync;sudo -S reboot\"
+alias sd=\"gpu && sudo sync&&sudo sync&& sudo sync&&sudo -S shutdown -h 0\"
+alias leanjava=\"idea ~/project/learn_java\"
+alias killmw=\"killall -9 mysql-workbench-bin\"
+alias noproxy=\"unset http_proxy && unset https_proxy\"
+alias killwx=\"killall -9 electronic-wechat\"
+export https_proxy='https://0.0.0.0:7118'
+export http_proxy='http://0.0.0.0:7118'
+export https_proxy=socks5://127.0.0.1:1080
+EOF"
 
 sudo apt-get install -y vim || echo "vim install error"
 echo "install vim-gtk of share clipboard"
