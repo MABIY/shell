@@ -21,6 +21,7 @@ echo "installed curl"
 echo "install chrome-gnome-shell"
 sudo apt-get install -y chrome-gnome-shell 
 sudo apt install -y gnome-shell-extension-dashtodock
+cp -rf ~/java/other/gnome_extensions/* ~/.local/share/gnome-shell/extensions/
 
 echo "gnome-tweak-tool"
 sudo apt install -y gnome-tweak-tool
