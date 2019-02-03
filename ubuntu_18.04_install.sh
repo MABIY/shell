@@ -21,7 +21,6 @@ echo "installed curl"
 echo "install chrome-gnome-shell"
 sudo apt-get install -y chrome-gnome-shell 
 sudo apt install -y gnome-shell-extension-dashtodock
-cp -rf ~/java/other/gnome_extensions/* ~/.local/share/gnome-shell/extensions/
 
 echo "gnome-tweak-tool"
 sudo apt install -y gnome-tweak-tool
@@ -244,6 +243,8 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 sudo groupadd docker
 sudo usermod -aG docker $USER
 ##### install from use device####
+mkdir -p ~/.local/share/gnome-shell/extensions/
+cp -rf ~/java/other/gnome_extensions/* ~/.local/share/gnome-shell/extensions/
 cp -rf /home/lh/tmp/developer_environment/java ~/
 tar -zxvf ~/java/jdk/jdk-8u151-linux-x64.tar.gz -C ~/java/jdk/
 tar -zxvf ~/java/jdk/jdk-7u80-linux-x64.tar.gz -C ~/java/jdk/
