@@ -28,22 +28,22 @@ sudo apt install -y gnome-tweak-tool
 echo "tree"
 sudo apt install -y tree
 
-echo "shadowsocks"
-sudo apt install -y shadowsocks && sudo cp  /home/lh/tmp/shadowsocks.json  /etc/
-sudo sh -c 'cat > /etc/systemd/system/shadowsocks.service <<EOF
-[Unit]
-Description=Shadowsocks Client Service
-After=network.target
-
-[Service]
-Type=simple
-User=root
-ExecStart=/usr/bin/sslocal -c /etc/shadowsocks.json
-
-[Install]
-WantedBy=multi-user.target
-EOF'
-sudo systemctl enable /etc/systemd/system/shadowsocks.service
+#echo "shadowsocks"
+#sudo apt install -y shadowsocks && sudo cp  /home/lh/tmp/shadowsocks.json  /etc/
+#sudo sh -c 'cat > /etc/systemd/system/shadowsocks.service <<EOF
+#[Unit]
+#Description=Shadowsocks Client Service
+#After=network.target
+#
+#[Service]
+#Type=simple
+#User=root
+#ExecStart=/usr/bin/sslocal -c /etc/shadowsocks.json
+#
+#[Install]
+#WantedBy=multi-user.target
+#EOF'
+#sudo systemctl enable /etc/systemd/system/shadowsocks.service
 
 
 echo "install albert"
@@ -102,9 +102,9 @@ alias leanjava=\"idea ~/project/learn_java\"
 alias killmw=\"killall -9 mysql-workbench-bin\"
 alias noproxy=\"unset http_proxy && unset https_proxy\"
 alias killwx=\"killall -9 electronic-wechat\"
-export https_proxy='https://0.0.0.0:7118'
-export http_proxy='http://0.0.0.0:7118'
-export https_proxy=socks5://127.0.0.1:1080
+#export https_proxy='https://0.0.0.0:7118'
+export http_proxy='http://0.0.0.0:12333'
+#export https_proxy=socks5://127.0.0.1:1080
 EOF"
 
 sudo apt-get install -y vim || echo "vim install error"
@@ -134,10 +134,10 @@ echo "install rar finish"
 echo "install redis tools"
 sudo apt-get install redis-tools -y
 
-echo "install privoxy"
-sudo apt install -y privoxy
-sudo sh -c "echo 'forward-socks5 / 127.0.0.1:1080 .' >> /etc/privoxy/config"
-sudo systemctl start privoxy.service
+#echo "install privoxy"
+#sudo apt install -y privoxy
+#sudo sh -c "echo 'forward-socks5 / 127.0.0.1:1080 .' >> /etc/privoxy/config"
+#sudo systemctl start privoxy.service
 
 echo "gpick 取色器安装"
 sudo apt-get install gpick -y 
@@ -278,5 +278,4 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 sudo docker network create --subnet=172.18.0.0/16 mynet
 sudo docker run -d --net mynet --ip 172.18.0.22  --restart=always -p 7111:8888 ilanyu/golang-reverseproxy
-
 
