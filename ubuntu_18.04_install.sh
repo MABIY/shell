@@ -264,7 +264,9 @@ sudo update-alternatives --install /usr/bin/gradle gradle  ~/java/build_tools/gr
 cp ~/tmp/.netrc ~/
 sudo dpkg -i ~/java/other/atom-amd64.deb
 sudo dpkg -i ~/java/other/sogoupinyin_2.2.0.0108_amd64.deb
+sudo dpkg -i ~/java/other/electron-ssr-0.2.6.deb
 sudo apt install -y -f
+
 
 sudo apt-get install  apt-transport-https ca-certificates curl  gnupg-agent  software-properties-common -y
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
