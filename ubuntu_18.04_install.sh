@@ -10,6 +10,8 @@ sudo  apt-get -y dist-upgrade
 sudo  apt-get -y autoremove 
 
 
+echo "install 安装文泉驿微黑字体库"
+sudo apt install -y ttf-wqy-microhei 
 echo "install git"
 sudo apt-get install -y git 
 echo "更新系统 end"
