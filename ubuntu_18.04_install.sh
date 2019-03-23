@@ -252,7 +252,7 @@ tar -zxvf ~/java/jdk/jdk-8u151-linux-x64.tar.gz -C ~/java/jdk/
 tar -zxvf ~/java/jdk/jdk-7u80-linux-x64.tar.gz -C ~/java/jdk/
 tar -zxvf ~/java/web_server/apache-tomcat-7.0.88.tar.gz -C ~/java/web_server/
 tar -zxvf ~/java/web_server/apache-tomcat-8.5.28.tar.gz -C ~/java/web_server/
-tar -zxvf ~/java/idea/ideaIU-2018.3.tar.gz -C ~/java/idea/
+tar -zxvf ~/java/idea/ideaIU.tar.gz -C ~/java/idea/
 tar -zxvf ~/java/git/smartgit-linux-18_2_5.tar.gz -C ~/java/git/
 echo "-javaagent:/home/lh/java/idea/jetbrains.jar">> ~/java/idea/idea-IU-183.4284.148/bin/idea64.vmoptions
 unzip ~/java/build_tools/gradle-5.1.1-all.zip -d ~/java/build_tools/
