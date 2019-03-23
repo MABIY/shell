@@ -245,8 +245,8 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 sudo groupadd docker
 sudo usermod -aG docker $USER
 ##### install from use device####
-mkdir -p ~/.local/share/gnome-shell/extensions/
 cp -rf ~/java/other/gnome_extensions/* ~/.local/share/gnome-shell/extensions/
+mkdir -p ~/.local/share/gnome-shell/extensions/
 cp -rf /home/lh/tmp/developer_environment/java ~/
 tar -zxvf ~/java/jdk/jdk-8u151-linux-x64.tar.gz -C ~/java/jdk/
 tar -zxvf ~/java/jdk/jdk-7u80-linux-x64.tar.gz -C ~/java/jdk/
@@ -254,7 +254,7 @@ tar -zxvf ~/java/web_server/apache-tomcat-7.0.88.tar.gz -C ~/java/web_server/
 tar -zxvf ~/java/web_server/apache-tomcat-8.5.28.tar.gz -C ~/java/web_server/
 tar -zxvf ~/java/idea/ideaIU-2018.3.tar.gz -C ~/java/idea/
 tar -zxvf ~/java/git/smartgit-linux-18_2_5.tar.gz -C ~/java/git/
-echo "-javaagent:/home/lh/java/idea/jetbrains-agent.jar">> ~/java/idea/idea-IU-183.4284.148/bin/idea64.vmoptions
+echo "-javaagent:/home/lh/java/idea/jetbrains.jar">> ~/java/idea/idea-IU-183.4284.148/bin/idea64.vmoptions
 unzip ~/java/build_tools/gradle-5.1.1-all.zip -d ~/java/build_tools/
 unzip ~/java/build_tools/apache-maven-3.6.0-bin.zip -d ~/java/build_tools/
 sudo update-alternatives --install /usr/bin/java java ~/java/jdk/jdk1.8.0_151/bin/java 400
@@ -268,16 +268,3 @@ sudo dpkg -i ~/java/other/atom-amd64.deb
 sudo dpkg -i ~/java/other/sogoupinyin_2.2.0.0108_amd64.deb
 sudo dpkg -i ~/java/other/electron-ssr-0.2.6.deb
 sudo apt install -y -f
-
-
-sudo apt-get install  apt-transport-https ca-certificates curl  gnupg-agent  software-properties-common -y
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu  $(lsb_release -cs) stable" -y
-sudo apt-get update    
-
-sudo apt-get install docker-ce docker-ce-cli containerd.io -y
-sudo groupadd docker
-sudo usermod -aG docker $USER
-sudo docker network create --subnet=172.18.0.0/16 mynet
-sudo docker run -d --net mynet --ip 172.18.0.22  --restart=always -p 7111:8888 ilanyu/golang-reverseproxy
-
