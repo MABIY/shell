@@ -14,6 +14,8 @@ echo "install 安装文泉驿微黑字体库"
 sudo apt install -y ttf-wqy-microhei 
 echo "install git"
 sudo apt-get install -y git 
+git config --global user.email "jyfc7879@gmail.com"
+git config --global user.name "lh"
 echo "更新系统 end"
 
 echo "install curl"
@@ -255,6 +257,8 @@ tar -zxvf ~/java/web_server/apache-tomcat-8.5.28.tar.gz -C ~/java/web_server/
 tar -zxvf ~/java/idea/ideaIU.tar.gz -C ~/java/idea/
 tar -zxvf ~/java/git/smartgit-linux-18_2_5.tar.gz -C ~/java/git/
 echo "-javaagent:/home/lh/java/idea/jetbrains.jar">> ~/java/idea/idea-IU-183.5912.21/bin/idea64.vmoptions
+echo "set clipboard=unnamedplus">~/.vimrc
+echo "set clipboard=unnamedplus">~/.ideavimrc
 unzip ~/java/build_tools/gradle-5.1.1-all.zip -d ~/java/build_tools/
 unzip ~/java/build_tools/apache-maven-3.6.0-bin.zip -d ~/java/build_tools/
 sudo update-alternatives --install /usr/bin/java java ~/java/jdk/jdk1.8.0_151/bin/java 400
