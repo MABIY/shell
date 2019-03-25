@@ -222,32 +222,32 @@ sudo apt install green-recorder -y
 # improve tools start speed
 sudo apt-get install preload -y
 # markdown editor
-wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
-sudo add-apt-repository 'deb https://typora.io/linux ./' -y
-sudo apt-get update
-sudo apt-get install typora -y
-
-# install docker 
-sudo apt-get install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg-agent \
-    software-properties-common -y
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable" -y
-sudo apt-get update    
-
-sudo apt-get install docker-ce docker-ce-cli containerd.io -y
-sudo groupadd docker
-sudo usermod -aG docker $USER
+#wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
+#sudo add-apt-repository 'deb https://typora.io/linux ./' -y
+#sudo apt-get update
+#sudo apt-get install typora -y
+#
+## install docker 
+#sudo apt-get install \
+#    apt-transport-https \
+#    ca-certificates \
+#    curl \
+#    gnupg-agent \
+#    software-properties-common -y
+#curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+#sudo add-apt-repository \
+#   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+#   $(lsb_release -cs) \
+#   stable" -y
+#sudo apt-get update    
+#
+#sudo apt-get install docker-ce docker-ce-cli containerd.io -y
+#sudo groupadd docker
+#sudo usermod -aG docker $USER
 ##### install from use device####
+cp -rf /home/lh/tmp/developer_environment/java ~/
 cp -rf ~/java/other/gnome_extensions/* ~/.local/share/gnome-shell/extensions/
 mkdir -p ~/.local/share/gnome-shell/extensions/
-cp -rf /home/lh/tmp/developer_environment/java ~/
 tar -zxvf ~/java/jdk/jdk-8u151-linux-x64.tar.gz -C ~/java/jdk/
 tar -zxvf ~/java/jdk/jdk-7u80-linux-x64.tar.gz -C ~/java/jdk/
 tar -zxvf ~/java/web_server/apache-tomcat-7.0.88.tar.gz -C ~/java/web_server/
