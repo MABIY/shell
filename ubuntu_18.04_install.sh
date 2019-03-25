@@ -254,7 +254,7 @@ tar -zxvf ~/java/web_server/apache-tomcat-7.0.88.tar.gz -C ~/java/web_server/
 tar -zxvf ~/java/web_server/apache-tomcat-8.5.28.tar.gz -C ~/java/web_server/
 tar -zxvf ~/java/idea/ideaIU.tar.gz -C ~/java/idea/
 tar -zxvf ~/java/git/smartgit-linux-18_2_5.tar.gz -C ~/java/git/
-echo "-javaagent:/home/lh/java/idea/jetbrains.jar">> ~/java/idea/idea-IU-183.4284.148/bin/idea64.vmoptions
+echo "-javaagent:/home/lh/java/idea/jetbrains.jar">> ~/java/idea/idea-IU-183.5912.21/bin/idea64.vmoptions
 unzip ~/java/build_tools/gradle-5.1.1-all.zip -d ~/java/build_tools/
 unzip ~/java/build_tools/apache-maven-3.6.0-bin.zip -d ~/java/build_tools/
 sudo update-alternatives --install /usr/bin/java java ~/java/jdk/jdk1.8.0_151/bin/java 400
