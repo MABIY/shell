@@ -152,7 +152,7 @@ echo "smplayer是基于mplayer的一个图形化前端 ]加速 [减速"
 sudo apt install -y mplayer
 sudo apt install -y smplayer
 
-sudo apt install -y mysql-server-5.7 
+sudo apt install -y mysql-server
 
 sudo wget -nv -O Release.key \
 >   https://build.opensuse.org/projects/home:manuelschneid3r/public_key
