@@ -114,6 +114,8 @@ EOF"
 sudo apt-get install -y vim || echo "vim install error"
 echo "install vim-gtk of share clipboard"
 sudo apt install -y vim-gtk 
+echo "set clipboard=unnamedplus">~/.vimrc
+echo "set clipboard=unnamedplus">~/.ideavimrc
 
 echo "compizconfig"
 sudo apt install -y compizconfig-settings-manager
@@ -257,8 +259,6 @@ tar -zxvf ~/java/web_server/apache-tomcat-8.5.28.tar.gz -C ~/java/web_server/
 tar -zxvf ~/java/idea/ideaIU.tar.gz -C ~/java/idea/
 tar -zxvf ~/java/git/smartgit-linux-18_2_5.tar.gz -C ~/java/git/
 echo "-javaagent:/home/lh/java/idea/jetbrains.jar">> ~/java/idea/idea-IU-183.5912.21/bin/idea64.vmoptions
-echo "set clipboard=unnamedplus">~/.vimrc
-echo "set clipboard=unnamedplus">~/.ideavimrc
 unzip ~/java/build_tools/gradle-5.1.1-all.zip -d ~/java/build_tools/
 unzip ~/java/build_tools/apache-maven-3.6.0-bin.zip -d ~/java/build_tools/
 sudo update-alternatives --install /usr/bin/java java ~/java/jdk/jdk1.8.0_151/bin/java 400
