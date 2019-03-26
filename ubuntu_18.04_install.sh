@@ -97,7 +97,7 @@ echo ji | sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/mast
 echo "input custom alias export"
 sudo sh -c "cat >> /home/lh/.zshrc <<EOF
 alias datef=\"date '+%Y%m%d'\"
-alias gdate=\"print -n `datef` | clipcopy\"
+alias gdate=\"date +'%Y%m%d' | clipcopy\"
 alias gpu=\"grive -p /home/lh/grive/\"
 alias pu=\"git add -A && git commit -m  \"..\" && git push\"
 alias rb=\"echo ji | sudo sync;sudo sync;sudo sync;sudo -S reboot\"
