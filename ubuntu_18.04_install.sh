@@ -215,7 +215,8 @@ sudo apt-get install kchmviewer -y
 sudo apt install -y xclip
 #back picture 
 sudo apt-get install variety -y
-# npm install embed-images -g (https://github.com/freeman-lab/embed-images)
+# (https://github.com/freeman-lab/embed-images)
+# npm install embed-images -g 
 # embed-images example.md > new.md
 
 # install green recorder
