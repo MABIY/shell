@@ -215,6 +215,8 @@ sudo apt-get install kchmviewer -y
 sudo apt install -y xclip
 #back picture 
 sudo apt-get install variety -y
+# install screenshot ->command  'flameshot gui'
+sudo apt-get install flameshot -y
 # (https://github.com/freeman-lab/embed-images)
 # npm install embed-images -g 
 # embed-images example.md > new.md
