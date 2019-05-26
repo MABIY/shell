@@ -140,6 +140,8 @@ echo "install rar finish"
 echo "install redis tools"
 sudo apt-get install redis-tools -y
 
+echo "work break reminder software"
+sudo apt install -y workrave
 #echo "install privoxy"
 #sudo apt install -y privoxy
 #sudo sh -c "echo 'forward-socks5 / 127.0.0.1:1080 .' >> /etc/privoxy/config"
