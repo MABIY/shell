@@ -232,6 +232,8 @@ sudo apt install green-recorder -y
 sudo apt-get install preload -y
 # work break remind software
 sudo apt install -y workrave
+# Kdenlive is an acronym for KDE Non-Linear Video Editork 
+sudo apt install -y kdenlive
 # markdown editor
 #wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
 #sudo add-apt-repository 'deb https://typora.io/linux ./' -y
