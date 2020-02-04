@@ -222,18 +222,16 @@ sudo apt-get install flameshot -y
 # (https://github.com/freeman-lab/embed-images)
 # npm install embed-images -g 
 # embed-images example.md > new.md
-
-# install green recorder
-sudo add-apt-repository ppa:fossproject/ppa -y
-sudo apt update
-sudo apt install green-recorder -y
-
 # improve tools start speed
 sudo apt-get install preload -y
 # work break remind software
 sudo apt install -y workrave
 # Kdenlive is an acronym for KDE Non-Linear Video Editork 
 sudo apt install -y kdenlive
+# kazam vedio Record tool 
+sudo apt install -y kazam
+# kdenlive vedio editor tool
+sudo apt-get install kdenlive
 # markdown editor
 #wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
 #sudo add-apt-repository 'deb https://typora.io/linux ./' -y
