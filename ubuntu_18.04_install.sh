@@ -129,6 +129,10 @@ sudo apt-get install -y google-chrome-stable
 echo "安装 图片编辑软件"
 sudo apt install gimp -y
 
+echo "install 便签"
+sudo add-apt-repository ppa:umang/indicator-stickynotes -y
+sudo apt-get update && sudo apt-get install -y indicator-stickynotes
+
 echo "install htop"
 sudo apt install -y htop
 echo "install htop finish"
