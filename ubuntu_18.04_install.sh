@@ -49,7 +49,9 @@ sudo apt install -y tree
 #EOF'
 #sudo systemctl enable /etc/systemd/system/shadowsocks.service
 
-
+ehoc "install Ulauncher"
+sudo add-apt-repository ppa:agornostal/ulauncher -y
+sudo apt install ulauncher -y
 echo "install albert"
 sudo apt install -y sshpass
 sudo apt install -y wget
