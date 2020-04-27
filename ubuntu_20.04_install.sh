@@ -34,3 +34,11 @@ echo "install googlepinyin"
 sudo apt install fcitx-bin -y
 sudo apt install fcitx-googlepinyin -y
 echo "installed googlepinyin"
+
+echo "install albert"
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_20.04/ /' > /etc/apt/sources.list.d/home:manuelschneid3r.list"
+wget -nv https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_20.04/Release.key -O Release.key
+sudo apt-key add - < Release.key
+sudo apt-get update
+sudo apt-get install albert
+echo "installed albert"
