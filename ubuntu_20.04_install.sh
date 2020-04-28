@@ -187,6 +187,13 @@ sudo apt install -y kdenlive
 # kazam vedio Record tool 
 sudo apt install -y kazam
 
+echo "ssr dependence install"
+sudo apt install libcanberra-gtk-module libcanberra-gtk3-module gconf2 gconf-service libappindicator1
+#可选依赖：
+sudo apt-get install libssl-dev
+#如果软件报错，请安装可选依赖
+sudo apt-get install libsodium-dev 
+echo "ssr dependence installed"
 
 echo "installed tools"
 
