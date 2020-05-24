@@ -73,6 +73,8 @@ sudo apt-get install -y okular
 sudo apt install -y wmctrl
 sudo apt install -y gnome-tweak-tool
 sudo apt-get install -y apt-transport-https
+sudo apt install -y compizconfig-settings-manager
+sudo apt install -y compiz-plugins-extra
 
 sudo apt-get install -y zsh || echo "------------zsh install erro"
 echo "install oh my zsh"
@@ -229,8 +231,6 @@ echo "installed tools"
 
 
 
-# sudo apt install -y compizconfig-settings-manager
-# sudo apt install -y compiz-plugins-extra
 
 # echo "install 便签"
 # sudo add-apt-repository ppa:umang/indicator-stickynotes -y
