@@ -70,6 +70,9 @@ sudo apt install -y rar
 sudo apt-get install -y ssh
 sudo apt install -y sshpass
 sudo apt-get install -y okular
+sudo apt install -y wmctrl
+sudo apt install -y gnome-tweak-tool
+sudo apt-get install -y apt-transport-https
 
 sudo apt-get install -y zsh || echo "------------zsh install erro"
 echo "install oh my zsh"
