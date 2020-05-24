@@ -70,9 +70,6 @@ sudo apt install -y rar
 sudo apt-get install -y ssh
 sudo apt install -y sshpass
 sudo apt-get install -y okular
-sudo apt install -y wmctrl
-sudo apt install gnome-tweak-tool
-sudo apt-get install -y apt-transport-https
 
 sudo apt-get install -y zsh || echo "------------zsh install erro"
 echo "install oh my zsh"
@@ -89,9 +86,9 @@ alias leanjava=\"idea ~/project/learn_java\"
 alias killmw=\"killall -9 mysql-workbench-bin\"
 alias noproxy=\"unset http_proxy && unset https_proxy\"
 alias killwx=\"killall -9 electronic-wechat\"
-#export https_proxy=127.0.0.1:12333
-export http_proxy=127.0.0.1:12333
-export https_proxy=127.0.0.1:1080
+#export https_proxy='https://0.0.0.0:7118'
+export http_proxy='http://0.0.0.0:12333'
+export https_proxy=socks5://127.0.0.1:1080
 EOF"
 
 sudo apt-get install -y vim || echo "vim install error"
@@ -100,6 +97,9 @@ sudo apt install -y vim-gtk
 echo "set clipboard=unnamedplus">~/.vimrc
 echo "set clipboard=unnamedplus">~/.ideavimrc
 
+sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/
+wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -
+sudo apt-get -y update
 sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -
 sudo apt-get -y update
@@ -214,9 +214,6 @@ echo "installed tools"
 # echo "-javaagent:/home/$user/java/idea/jetbrains.jar">> ~/java/idea/idea-IU-183.5912.21/bin/idea64.vmoptions
 # unzip ~/java/build_tools/gradle-5.1.1-all.zip -d ~/java/build_tools/
 # unzip ~/java/build_tools/apache-maven-3.6.0-bin.zip -d ~/java/build_tools/
-# sudo update-alternatives --install /usr/bin/java java ~/java/jdk/jdk1.8.0_151/bin/java 400
-# sudo update-alternatives --install /usr/bin/javac javac ~/java/jdk/jdk1.8.0_151/bin/javac 400
-# sudo update-alternatives --install /usr/bin/java java ~/java/jdk/jdk1.7.0_80/bin/java 300
 # sudo update-alternatives --install /usr/bin/javac javac ~/java/jdk/jdk1.7.0_80/bin/javac 300
 # sudo update-alternatives --install /usr/bin/mvn mvn ~/java/build_tools/apache-maven-3.6.0/bin/mvn 300
 # sudo update-alternatives --install /usr/bin/gradle gradle  ~/java/build_tools/gradle-5.1.1/bin/gradle 300
