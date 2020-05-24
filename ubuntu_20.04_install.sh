@@ -162,7 +162,8 @@ sudo sh -c  'echo "gnome-session" >> /etc/xrdp/startwm.sh'
 
 #桌面环境配置
 gsettings set org.gnome.desktop.wm.keybindings panel-main-menu "[]" # disable Alt+F1
-
+gsettings set org.gnome.desktop.background picture-uri '' # remove default background image
+gsettings set org.gnome.desktop.background primary-color 'rgb(0, 102, 204)' # set blue background
 
 # install git tools ctrl+shift+p
 # sudo add-apt-repository ppa:peek-developers/stable -y
