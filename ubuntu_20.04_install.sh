@@ -70,26 +70,29 @@ sudo apt install -y rar
 sudo apt-get install -y ssh
 sudo apt install -y sshpass
 sudo apt-get install -y okular
+sudo apt install -y wmctrl
+sudo apt install gnome-tweak-tool
+sudo apt-get install -y apt-transport-https
 
 sudo apt-get install -y zsh || echo "------------zsh install erro"
-# echo "install oh my zsh"
-# echo $password | sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-# echo "input custom alias export"
-# sudo sh -c "cat >> /home/$user/.zshrc <<EOF
-# alias datef=\"date '+%Y%m%d'\"
-# alias gdate=\"date +'%Y%m%d' | clipcopy\"
-# alias gpu=\"grive -p /home/$user/grive/\"
-# alias pu=\"git add -A && git commit -m  \"..\" && git push\"
-# alias rb=\"echo $password | sudo sync;sudo sync;sudo sync;sudo -S reboot\"
-# alias sd=\"gpu && sudo sync&&sudo sync&& sudo sync&&sudo -S shutdown -h 0\"
-# alias leanjava=\"idea ~/project/learn_java\"
-# alias killmw=\"killall -9 mysql-workbench-bin\"
-# alias noproxy=\"unset http_proxy && unset https_proxy\"
-# alias killwx=\"killall -9 electronic-wechat\"
-# #export https_proxy='https://0.0.0.0:7118'
-# export http_proxy='http://0.0.0.0:12333'
-# #export https_proxy=socks5://127.0.0.1:1080
-# EOF"
+echo "install oh my zsh"
+echo $password | sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+echo "input custom alias export"
+sudo sh -c "cat >> /home/$user/.zshrc <<EOF
+alias datef=\"date '+%Y%m%d'\"
+alias gdate=\"date +'%Y%m%d' | clipcopy\"
+alias gpu=\"grive -p /home/$user/grive/\"
+alias pu=\"git add -A && git commit -m  \"..\" && git push\"
+alias rb=\"echo $password | sudo sync;sudo sync;sudo sync;sudo -S reboot\"
+alias sd=\"gpu && sudo sync&&sudo sync&& sudo sync&&sudo -S shutdown -h 0\"
+alias leanjava=\"idea ~/project/learn_java\"
+alias killmw=\"killall -9 mysql-workbench-bin\"
+alias noproxy=\"unset http_proxy && unset https_proxy\"
+alias killwx=\"killall -9 electronic-wechat\"
+#export https_proxy=127.0.0.1:12333
+export http_proxy=127.0.0.1:12333
+export https_proxy=127.0.0.1:1080
+EOF"
 
 sudo apt-get install -y vim || echo "vim install error"
 echo "install vim-gtk of share clipboard"
@@ -120,7 +123,7 @@ sudo apt install -y smplayer
 sudo apt install -y mysql-server
 
 echo "install grive2"
-sudo apt-get install git cmake build-essential libgcrypt11-dev libyajl-dev \
+sudo apt-get install git cmake build-essential libgcrypt20-dev libyajl-dev \
     libboost-all-dev libcurl4-openssl-dev libexpat1-dev libcppunit-dev binutils-dev \
     debhelper zlib1g-dev dpkg-dev pkg-config -y
 git -C ~/ clone https://github.com/vitalif/grive2.git
@@ -188,11 +191,11 @@ sudo apt install -y kdenlive
 sudo apt install -y kazam
 
 echo "ssr dependence install"
-sudo apt install libcanberra-gtk-module libcanberra-gtk3-module gconf2 gconf-service libappindicator1
+sudo apt install -y  libcanberra-gtk-module libcanberra-gtk3-module gconf2 gconf-service libappindicator1 
 #可选依赖：
-sudo apt-get install libssl-dev
+sudo apt-get -y install libssl-dev
 #如果软件报错，请安装可选依赖
-sudo apt-get install libsodium-dev 
+sudo apt-get  -y install libsodium-dev 
 echo "ssr dependence installed"
 
 echo "installed tools"
