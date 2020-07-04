@@ -173,6 +173,8 @@ gsettings set org.gnome.desktop.screensaver primary-color 'rgb(0, 102, 204)' # s
 # sudo add-apt-repository ppa:peek-developers/stable -y
 # sudo apt install -y peek
 
+# anki install
+sudo apt install -y anki
 # 快速关闭程序工具
 sudo apt install -y plank
 
