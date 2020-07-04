@@ -235,6 +235,6 @@ echo "installed tools"
 
 
 # echo "install 便签"
-# sudo add-apt-repository ppa:umang/indicator-stickynotes -y
-# sudo apt-get update && sudo apt-get install -y indicator-stickynotes
+sudo add-apt-repository ppa:umang/indicator-stickynotes -y
+sudo apt-get update && sudo apt-get install -y indicator-stickynotes
 
