@@ -51,11 +51,6 @@ echo "install tree"
 sudo apt install -y tree
 echo "installed tree"
 
-echo "install googlepinyin"
-sudo apt install fcitx-bin -y
-sudo apt install fcitx-googlepinyin -y
-echo "installed googlepinyin"
-
 echo "install albert"
 sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_20.04/ /' > /etc/apt/sources.list.d/home:manuelschneid3r.list"
 wget -nv https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_20.04/Release.key -O Release.key
