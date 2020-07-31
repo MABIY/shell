@@ -97,11 +97,8 @@ sudo apt install -y vim-gtk
 echo "set clipboard=unnamedplus">~/.vimrc
 echo "set clipboard=unnamedplus">~/.ideavimrc
 
-sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/
-wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -
-sudo apt-get -y update
-sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/
-wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 sudo apt-get -y update
 sudo apt-get install -y google-chrome-stable
 
@@ -159,10 +156,10 @@ sudo sh -c  'echo "gnome-session" >> /etc/xrdp/startwm.sh'
 
 #桌面环境配置
 gsettings set org.gnome.desktop.wm.keybindings panel-main-menu "[]" # disable Alt+F1
-gsettings set org.gnome.desktop.background picture-uri '' # remove default background image
-gsettings set org.gnome.desktop.background primary-color 'rgb(0, 102, 204)' # set blue background
-gsettings set org.gnome.desktop.screensaver picture-uri '' # remove default lock screen
-gsettings set org.gnome.desktop.screensaver primary-color 'rgb(0, 102, 204)' # set blue lock screen
+#gsettings set org.gnome.desktop.background picture-uri '' # remove default background image
+#gsettings set org.gnome.desktop.background primary-color 'rgb(0, 102, 204)' # set blue background
+#gsettings set org.gnome.desktop.screensaver picture-uri '' # remove default lock screen
+#gsettings set org.gnome.desktop.screensaver primary-color 'rgb(0, 102, 204)' # set blue lock screen
 
 # install git tools ctrl+shift+p
 # sudo add-apt-repository ppa:peek-developers/stable -y
