@@ -4,6 +4,10 @@
 # History:
 # 2020/08/01    skylark  change release
 # 2020/04/27    skylark First release
+# 说明
+# 运行方式: ./ubuntu_20.04_init_install_update.sh <userName> <password>
+# <userName> 当前账户 <password> 当前账户对应的密码
+# 脚本最下面注释了需要代理和本地存储设备的脚本,如需使用 移除注释
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 export PATH
 
@@ -145,59 +149,59 @@ echo "install sogou end"
 
 # start need proxy set
 
-echo "set proxy start"
-export http_proxy='http://0.0.0.0:12333'
-#export https_proxy='socks5://127.0.0.1:1080'
-export https_proxy='http://0.0.0.0:12333'
-echo "set proxy end" 
-
-echo "install oh my zsh start"
-sudo apt-get install -y zsh 
-echo "install oh my zsh"
-echo $password | sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-echo "input custom alias export"
-sudo sh -c "cat >> /home/$user/.zshrc <<EOF
-alias datef=\"date '+%Y%m%d'\"
-alias gdate=\"date +'%Y%m%d' | clipcopy\"
-alias gpu=\"grive -p /home/$user/grive/\"
-alias pu=\"git add -A && git commit -m  \"..\" && git push\"
-alias rb=\"echo $password | sudo sync;sudo sync;sudo sync;sudo -S reboot\"
-alias sd=\"gpu && sudo sync&&sudo sync&& sudo sync&&sudo -S shutdown -h 0\"
-alias leanjava=\"idea ~/project/learn_java\"
-alias killmw=\"killall -9 mysql-workbench-bin\"
-alias noproxy=\"unset http_proxy && unset https_proxy\"
-alias killwx=\"killall -9 electronic-wechat\"
-export http_proxy='http://0.0.0.0:12333'
-#export https_proxy='socks5://127.0.0.1:1080'
-export https_proxy='http://0.0.0.0:12333'
-EOF"
+#echo "set proxy start"
+#export http_proxy='http://0.0.0.0:12333'
+##export https_proxy='socks5://127.0.0.1:1080'
+#export https_proxy='http://0.0.0.0:12333'
+#echo "set proxy end" 
+#
+#echo "install oh my zsh start"
+#sudo apt-get install -y zsh 
+#echo "install oh my zsh"
+#echo $password | sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+#echo "input custom alias export"
+#sudo sh -c "cat >> /home/$user/.zshrc <<EOF
+#alias datef=\"date '+%Y%m%d'\"
+#alias gdate=\"date +'%Y%m%d' | clipcopy\"
+#alias gpu=\"grive -p /home/$user/grive/\"
+#alias pu=\"git add -A && git commit -m  \"..\" && git push\"
+#alias rb=\"echo $password | sudo sync;sudo sync;sudo sync;sudo -S reboot\"
+#alias sd=\"gpu && sudo sync&&sudo sync&& sudo sync&&sudo -S shutdown -h 0\"
+#alias leanjava=\"idea ~/project/learn_java\"
+#alias killmw=\"killall -9 mysql-workbench-bin\"
+#alias noproxy=\"unset http_proxy && unset https_proxy\"
+#alias killwx=\"killall -9 electronic-wechat\"
+#export http_proxy='http://0.0.0.0:12333'
+##export https_proxy='socks5://127.0.0.1:1080'
+#export https_proxy='http://0.0.0.0:12333'
+#EOF"
 #oh my zsh copydir 
-sudo apt install -y xclip
-echo "install oh my zsh end"
+#sudo apt install -y xclip
+#echo "install oh my zsh end"
 
-echo "install google chrome start"
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-sudo apt-get -y update
-sudo apt-get install -y google-chrome-stable
-echo "install google chrome end"
-
-echo "install grive2"
-sudo apt-get install git cmake build-essential libgcrypt20-dev libyajl-dev \
-    libboost-all-dev libcurl4-openssl-dev libexpat1-dev libcppunit-dev binutils-dev \
-    debhelper zlib1g-dev dpkg-dev pkg-config -y
-git -C ~/ clone https://github.com/vitalif/grive2.git
-cd grive2
-mkdir build
-cd build
-cmake ..
-make -j4
-sudo make install
-rm -rf ~/grive2
-cd ~/
-echo "installed grive2"
-
-sed -i '/export http/d' /home/$user/.bashrc
+#echo "install google chrome start"
+#wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+#sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+#sudo apt-get -y update
+#sudo apt-get install -y google-chrome-stable
+#echo "install google chrome end"
+#
+#echo "install grive2"
+#sudo apt-get install git cmake build-essential libgcrypt20-dev libyajl-dev \
+#    libboost-all-dev libcurl4-openssl-dev libexpat1-dev libcppunit-dev binutils-dev \
+#    debhelper zlib1g-dev dpkg-dev pkg-config -y
+#git -C ~/ clone https://github.com/vitalif/grive2.git
+#cd grive2
+#mkdir build
+#cd build
+#cmake ..
+#make -j4
+#sudo make install
+#rm -rf ~/grive2
+#cd ~/
+#echo "installed grive2"
+#
+#sed -i '/export http/d' /home/$user/.bashrc
 # end need proxy set 
 
 
