@@ -111,6 +111,7 @@ sudo apt install aria2 -y
 #桌面环境配置
 gsettings set org.gnome.desktop.wm.keybindings panel-main-menu "[]" # disable Alt+F1
 gsettings set org.gnome.settings-daemon.plugins.media-keys terminal  "['<Alt>t']" # change alt+ctrl+t -> alt+t
+gsettings set org.gnome.desktop.wm.keybindings activate-window-menu "[]" # disable window  menu
 
 #anki install
 sudo apt install -y anki
