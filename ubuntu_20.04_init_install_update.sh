@@ -146,12 +146,9 @@ echo "install sogou end"
 # start need proxy set
 
 echo "set proxy start"
-sudo sh -c "cat >> /home/$user/.bashrc<<EOF
 export http_proxy='http://0.0.0.0:12333'
 #export https_proxy='socks5://127.0.0.1:1080'
 export https_proxy='http://0.0.0.0:12333'
-EOF"
-source /home/$user/.bashrc
 echo "set proxy end" 
 
 echo "install oh my zsh start"
