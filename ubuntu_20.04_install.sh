@@ -18,30 +18,32 @@ echo "get user:$user password:$password"
 echo "set $user not need input password"
 { echo "$password"; echo "$user ALL=NOPASSWD: ALL"; } | sudo -k  -S tee --append /etc/sudoers
 
-echo "更新系统 start"
+echo "ubuntu 20.04 install start"
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y dis-upgrade
 sudo apt-get -y autoremove
-echo "更新系统 end"
+echo "ubuntu 20.04 install end"
 
 echo "install LSB is keep distribution to keep the organizational structure of the Linux Foundation to standardize the software system structure"
 sudo apt-get install -y lsb-core || echo "--------------lsb-core install error"
 echo "installed LSB is keep distribution to keep the organizational structure of the Linux Foundation to standardize the software system structure"
 
 
-echo "install 安装文泉驿微黑字体库"
+echo "install ttf-wqy-microhei font start"
 sudo apt install -y ttf-wqy-microhei 
-echo "install git"
+echo "install ttf-wqy-microhei font end"
+
+echo "install git start"
 sudo apt-get install -y git 
 git config --global user.email "jyfc7879@gmail.com"
 git config --global user.name "$user"
-echo "更新系统 end"
+echo "install git end"
 
-echo "install curl"
+echo "install curl and wget install"
 sudo apt-get install -y curl
 sudo apt install -y wget
-echo "installed curl"
+echo "installed curl and wget install"
 
 echo "install chrome-gnome-shell"
 sudo apt-get install -y chrome-gnome-shell 
@@ -55,6 +57,7 @@ echo "install albert"
 sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_20.04/ /' > /etc/apt/sources.list.d/home:manuelschneid3r.list"
 wget -nv https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_20.04/Release.key -O Release.key
 sudo apt-key add - < Release.key
+rm Release.key 
 sudo apt-get update
 sudo apt-get install albert -y
 echo "installed albert"
