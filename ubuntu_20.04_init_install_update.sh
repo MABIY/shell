@@ -110,6 +110,7 @@ sudo apt install aria2 -y
 
 #桌面环境配置
 gsettings set org.gnome.desktop.wm.keybindings panel-main-menu "[]" # disable Alt+F1
+gsettings set org.gnome.settings-daemon.plugins.media-keys terminal  "['<Alt>t']" # change alt+ctrl+t -> alt+t
 
 #anki install
 sudo apt install -y anki
@@ -204,8 +205,8 @@ sed -i '/export http/d' /home/$user/.bashrc
 
 ##### install from use device####
 # cp -rf /home/$user/tmp/developer_environment/java ~/
-# cp -rf ~/java/other/gnome_extensions/* ~/.local/share/gnome-shell/extensions/
 # mkdir -p ~/.local/share/gnome-shell/extensions/
+# cp -rf ~/java/other/gnome_extensions/* ~/.local/share/gnome-shell/extensions/
 # tar -zxvf ~/java/jdk/jdk-8u151-linux-x64.tar.gz -C ~/java/jdk/
 # tar -zxvf ~/java/jdk/jdk-7u80-linux-x64.tar.gz -C ~/java/jdk/
 # tar -zxvf ~/java/web_server/apache-tomcat-7.0.88.tar.gz -C ~/java/web_server/
