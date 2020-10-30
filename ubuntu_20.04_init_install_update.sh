@@ -217,7 +217,7 @@ echo "install sogou end"
 # tar -zxvf ~/java/git/smartgit-linux-18_2_5.tar.gz -C ~/java/git/
 # unzip ~/java/build_tools/gradle-5.1.1-all.zip -d ~/java/build_tools/
 # unzip ~/java/build_tools/apache-maven-3.6.0-bin.zip -d ~/java/build_tools/
-# sudo update-alternatives --install /usr/bin/java java ~/java/jdk/jdk1.8.0_151 300
+# sudo update-alternatives --install /usr/bin/java java ~/java/jdk/jdk1.8.0_151/bin/java 300
 # sudo update-alternatives --install /usr/bin/javac javac ~/java/jdk/jdk1.8.0_151/bin/javac 300
 # sudo update-alternatives --install /usr/bin/mvn mvn ~/java/build_tools/apache-maven-3.6.0/bin/mvn 300
 # sudo update-alternatives --install /usr/bin/gradle gradle  ~/java/build_tools/gradle-5.1.1/bin/gradle 300
