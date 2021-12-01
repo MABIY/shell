@@ -284,4 +284,6 @@ cp ~/tmp/.netrc ~/
 sudo dpkg -i ~/java/other/atom-amd64.deb
 sudo dpkg -i ~/java/other/sogoupinyin_2.2.0.0108_amd64.deb
 sudo dpkg -i ~/java/other/electron-ssr-0.2.6.deb
+# electron-ssr icon show need install libappindicator-dev
+sudo apt install -y libappindicator-dev
 sudo apt install -y -f
