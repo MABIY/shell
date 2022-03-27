@@ -30,6 +30,10 @@ sudo apt-get -y dis-upgrade
 sudo apt-get -y autoremove
 echo "ubuntu 20.04 update end"
 
+echo "electron-ssr icon show start"
+sudo apt-get install libappindicator-dev
+echo "electron-ssr icon show end"
+
 echo "temp depend install start"
 sudo apt install -y  libcanberra-gtk-module libcanberra-gtk3-module gconf2 gconf-service libappindicator1
 sudo apt-get -y install libssl-dev
