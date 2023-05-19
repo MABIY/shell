@@ -25,7 +25,6 @@ echo "set $user not need input password"
 echo "ubuntu 22.04 update start"
 sudo apt-get -y update
 sudo apt-get -y upgrade
-sudo apt-get -y dis-upgrade
 sudo apt-get -y autoremove
 echo "ubuntu 22.04 update end"
 
@@ -33,11 +32,11 @@ echo "electron-ssr icon show start"
 sudo apt-get install libappindicator-dev
 echo "electron-ssr icon show end"
 
-echo "temp depend install start"
-sudo apt install -y  libcanberra-gtk-module libcanberra-gtk3-module gconf2 gconf-service libappindicator1
-sudo apt-get -y install libssl-dev
-sudo apt-get  -y install libsodium-dev
-echo "temp depend install end"
+# echo "temp depend install start"
+# sudo apt install -y  libcanberra-gtk-module libcanberra-gtk3-module gconf2 gconf-service libappindicator1
+# sudo apt-get -y install libssl-dev
+# sudo apt-get  -y install libsodium-dev
+# echo "temp depend install end"
 
 echo "install LSB is keep distribution to keep the organizational structure of the Linux Foundation to standardize the software system structure"
 sudo apt-get install -y lsb-core
@@ -66,8 +65,8 @@ echo "installed chrome-gnome-shell"
 echo "install albert"
 echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_22.04/ /' | sudo tee /etc/apt/sources.list.d/home:manuelschneid3r.list
 curl -fsSL https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_22.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_manuelschneid3r.gpg > /dev/null
-sudo apt update
-sudo apt install albert
+sudo apt update -y
+sudo apt install -y albert 
 echo "installed albert"
 
 
@@ -79,14 +78,11 @@ sudo apt-get install -y ssh
 sudo apt install -y sshpass
 sudo apt-get install -y okular
 sudo apt install -y wmctrl
-sudo apt install -y gnome-tweak-tool
+sudo apt install -y gnome-tweaks
 sudo apt-get install -y apt-transport-https
 sudo apt install -y compizconfig-settings-manager
 sudo apt install -y compiz-plugins-extra
 echo "install tools end"
-
-
-echo "install oh my zsh end"
 
 sudo apt-get install -y vim || echo "vim install error"
 echo "install vim-gtk of share clipboard"
