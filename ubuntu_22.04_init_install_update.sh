@@ -30,7 +30,7 @@ sudo apt-get -y autoremove
 echo "ubuntu 22.04 update end"
 
 echo "electron-ssr icon show start"
-sudo apt-get install libappindicator-dev -y
+#sudo apt-get install libappindicator-dev -y
 echo "electron-ssr icon show end"
 
 echo "temp depend install start"
