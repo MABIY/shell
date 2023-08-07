@@ -1,8 +1,8 @@
 #!/bin/bash
 # Program:
-#       This program  install tools on ubuntu 20.04
+#       This program  install tools on ubuntu 22.04
 # History:
-# 2023/05/19    skylark First release
+# 2023/07/29    skylark  change release
 # 说明
 # 运行方式: ./ubuntu_22.04_init_install_update.sh <userName> <password>
 # <userName> 当前账户 <password> 当前账户对应的密码
@@ -25,6 +25,7 @@ echo "set $user not need input password"
 echo "ubuntu 22.04 update start"
 sudo apt-get -y update
 sudo apt-get -y upgrade
+sudo apt-get -y dis-upgrade
 sudo apt-get -y autoremove
 echo "ubuntu 22.04 update end"
 
@@ -32,11 +33,11 @@ echo "electron-ssr icon show start"
 sudo apt-get install libappindicator-dev
 echo "electron-ssr icon show end"
 
-# echo "temp depend install start"
-# sudo apt install -y  libcanberra-gtk-module libcanberra-gtk3-module gconf2 gconf-service libappindicator1
-# sudo apt-get -y install libssl-dev
-# sudo apt-get  -y install libsodium-dev
-# echo "temp depend install end"
+echo "temp depend install start"
+sudo apt install -y  libcanberra-gtk-module libcanberra-gtk3-module gconf2 gconf-service libappindicator1
+sudo apt-get -y install libssl-dev
+sudo apt-get  -y install libsodium-dev
+echo "temp depend install end"
 
 echo "install LSB is keep distribution to keep the organizational structure of the Linux Foundation to standardize the software system structure"
 sudo apt-get install -y lsb-core
@@ -66,7 +67,7 @@ echo "install albert"
 echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_22.04/ /' | sudo tee /etc/apt/sources.list.d/home:manuelschneid3r.list
 curl -fsSL https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_22.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_manuelschneid3r.gpg > /dev/null
 sudo apt update -y
-sudo apt install -y albert 
+sudo apt install albert -y
 echo "installed albert"
 
 
@@ -78,11 +79,14 @@ sudo apt-get install -y ssh
 sudo apt install -y sshpass
 sudo apt-get install -y okular
 sudo apt install -y wmctrl
-sudo apt install -y gnome-tweaks
+sudo apt install -y gnome-tweak-tool
 sudo apt-get install -y apt-transport-https
 sudo apt install -y compizconfig-settings-manager
 sudo apt install -y compiz-plugins-extra
 echo "install tools end"
+
+
+echo "install oh my zsh end"
 
 sudo apt-get install -y vim || echo "vim install error"
 echo "install vim-gtk of share clipboard"
@@ -136,6 +140,13 @@ sudo apt install -y kazam
 # echo "install 便签"
 sudo add-apt-repository ppa:umang/indicator-stickynotes -y
 sudo apt-get update && sudo apt-get install -y indicator-stickynotes
+
+echo "install sogou start"
+curl -sL 'https://keyserver.ubuntu.com/pks/lookup?&op=get&search=0x73BC8FBCF5DE40C6ADFCFFFA9C949F2093F565FF' | sudo apt-key add
+sudo apt-add-repository 'deb http://archive.ubuntukylin.com/ukui focal main'
+sudo apt upgrade -y
+sudo apt install sogouimebs -y
+echo "install sogou end"
 
 
 # start need proxy set
