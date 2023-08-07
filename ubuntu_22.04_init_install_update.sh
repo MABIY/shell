@@ -110,6 +110,12 @@ echo "install smplayer end"
 
 sudo apt install -y figlet #将字符串在终端生成一个logo的终端工具
 
+#gnome extensions
+echo "install gnome"
+sudo apt install -y gnome-shell-extension-manager
+sudo apt-get install -y chrome-gnome-shell 
+echo "install gnome"
+#gnome extensions
 #下载工具
 sudo apt install uget -y
 sudo apt install aria2 -y
