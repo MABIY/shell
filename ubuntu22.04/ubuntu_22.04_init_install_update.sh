@@ -79,14 +79,13 @@ sudo apt-get install -y ssh
 sudo apt install -y sshpass
 sudo apt-get install -y okular
 sudo apt install -y wmctrl
-sudo apt install -y gnome-tweak-tool
+sudo apt install -y gnome-tweaks
 sudo apt-get install -y apt-transport-https
 sudo apt install -y compizconfig-settings-manager
 sudo apt install -y compiz-plugins-extra
 echo "install tools end"
 
 
-echo "install oh my zsh end"
 
 sudo apt-get install -y vim || echo "vim install error"
 echo "install vim-gtk of share clipboard"
@@ -143,24 +142,53 @@ sudo apt install -y kdenlive
 # kazam vedio Record tool 
 sudo apt install -y kazam
 
-# echo "install 便签"
-sudo add-apt-repository ppa:umang/indicator-stickynotes -y
-sudo apt-get update && sudo apt-get install -y indicator-stickynotes
+# echo "install vscode"
+curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/ms-vscode-keyring.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/ms-vscode-keyring.gpg] https://packages.microsoft.com/repos/vscode stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
+sudo apt update -y
+sudo apt install -y code
 
 
+# need download clash window sougou
+# install clash
+#sudo tar -zxvf ~/Downloads/software/Clash.for.Windows-0.20.30-x64-linux.tar.gz -C /opt
+#sudo mv /opt/Clash\ for\ Windows-0.20.30-x64-linux  /opt/clash
+#sudo sh -c 'echo "[Desktop Entry]
+#Name=clash
+#Name[zh_CN]=Clash for windwos
+#GenericName=Clash for windows
+#GenericName[zh_CN]=Clash for windows
+#Comment=Start Clash for windows
+#Comment[zh_CN]=启动Clash for windows
+#Exec=/opt/clash/cfw
+#Icon=/opt/clash/cfw
+#Terminal=false
+#Type=Application
+#Categories=System;Utility;
+#StartupNotify=false
+#" > /usr/share/applications/clash.desktop'
+
+# install sougou
+#sudo apt-get install fcitx
+#sudo apt --fix-broken install
+#sudo dpkg -i ~/Downloads/software/sogoupinyin_4.2.1.145_amd64.deb
+#sudo apt install libqt5qml5 libqt5quick5 libqt5quickwidgets5 qml-module-qtquick2
+#sudo apt install libgsettings-qt1
+#sudo apt install -y -f
 
 # start need proxy set
 
 #echo "set proxy start"
-#export http_proxy='http://0.0.0.0:12333'
+#export http_proxy='http://0.0.0.0:1080'
 ##export https_proxy='socks5://127.0.0.1:1080'
-#export https_proxy='http://0.0.0.0:12333'
+#export https_proxy='http://0.0.0.0:1080'
 #echo "set proxy end" 
 #
 #echo "install oh my zsh start"
 #sudo apt-get install -y zsh 
 #echo "install oh my zsh"
-#echo $password | sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+#yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#echo $password | chsh -s  $(which zsh)
 #echo "input custom alias export"
 #sudo sh -c "cat >> /home/$user/.zshrc <<EOF
 #alias datef=\"date '+%Y%m%d'\"
@@ -173,20 +201,42 @@ sudo apt-get update && sudo apt-get install -y indicator-stickynotes
 #alias killmw=\"killall -9 mysql-workbench-bin\"
 #alias noproxy=\"unset http_proxy && unset https_proxy\"
 #alias killwx=\"killall -9 electronic-wechat\"
-#export http_proxy='http://0.0.0.0:12333'
+#export http_proxy='http://0.0.0.0:1080'
 ##export https_proxy='socks5://127.0.0.1:1080'
-#export https_proxy='http://0.0.0.0:12333'
+#export https_proxy='http://0.0.0.0:1080'
 #EOF"
 #oh my zsh copydir 
 #sudo apt install -y xclip
 #echo "install oh my zsh end"
 
+##install asdf:The Multiple Runtime Version Manager
+#echo "start install asdf"
+#git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.12.0
+#sed -i 's/plugins=(.*)/plugins=(git asdf)/g' ~/.zshrc
+#source ~/.zshrc
+#echo "end install asdf"
+
+#echo "asdf  start install software"
+#asdf plugin add nodejs
+#asdf install nodejs latest
+#asdf global nodejs latest
+#asdf plugin add java
+#asdf install java adoptopenjdk-8.0.382+5
+#asdf install java adoptopenjdk-11.0.19+7
+#asdf install java adoptopenjdk-17.0.8+7
+#asdf global java adoptopenjdk-17.0.8+7
+#echo ". ~/.asdf/plugins/java/set-java-home.zsh">> ~/.zshrc
+#asdf plugin add maven
+#asdf install maven latest
+#asdf global maven latest
+#echo "asdf end install software"
+#asdf plugin add gradle
+#asdf install gradle latest
+#asdf global gradle latest
+
 #echo "install google chrome start"
-#wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-#sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-#sudo apt-get -y update
-#sudo apt-get install -y google-chrome-stable
-#echo "install google chrome end"
+#wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+#sudo dpkg -i google-chrome-stable_current_amd64.deb
 #
 #echo "install grive2"
 #sudo apt-get install git cmake build-essential libgcrypt20-dev libyajl-dev \
@@ -203,31 +253,4 @@ sudo apt-get update && sudo apt-get install -y indicator-stickynotes
 #cd ~/
 #echo "installed grive2"
 #
-#sed -i '/export http/d' /home/$user/.bashrc
 # end need proxy set 
-
-
-##### install from use device####
-# cp -rf /home/$user/tmp/developer_environment/java ~/
-# mkdir -p ~/.local/share/gnome-shell/extensions/
-# cp -rf ~/java/other/gnome_extensions/* ~/.local/share/gnome-shell/extensions/
-# tar -zxvf ~/java/jdk/jdk-8u151-linux-x64.tar.gz -C ~/java/jdk/
-# tar -zxvf ~/java/jdk/jdk-7u80-linux-x64.tar.gz -C ~/java/jdk/
-# tar -zxvf ~/java/web_server/apache-tomcat-7.0.88.tar.gz -C ~/java/web_server/
-# tar -zxvf ~/java/web_server/apache-tomcat-8.5.28.tar.gz -C ~/java/web_server/
-# tar -zxvf ~/java/idea/ideaIU.tar.gz -C ~/java/idea/
-# tar -zxvf ~/java/git/smartgit-linux-18_2_5.tar.gz -C ~/java/git/
-# unzip ~/java/build_tools/gradle-5.1.1-all.zip -d ~/java/build_tools/
-# unzip ~/java/build_tools/apache-maven-3.6.0-bin.zip -d ~/java/build_tools/
-# sudo update-alternatives --install /usr/bin/java java ~/java/jdk/jdk1.8.0_151/bin/java 300
-# sudo update-alternatives --install /usr/bin/javac javac ~/java/jdk/jdk1.8.0_151/bin/javac 300
-# sudo update-alternatives --install /usr/bin/mvn mvn ~/java/build_tools/apache-maven-3.6.0/bin/mvn 300
-# sudo update-alternatives --install /usr/bin/gradle gradle  ~/java/build_tools/gradle-5.1.1/bin/gradle 300
-# cp ~/tmp/.netrc ~/
-# sudo apt install -y -f
-
-
-
-
-
-
