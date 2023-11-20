@@ -83,6 +83,7 @@ sudo apt install -y gnome-tweaks
 sudo apt-get install -y apt-transport-https
 sudo apt install -y compizconfig-settings-manager
 sudo apt install -y compiz-plugins-extra
+sudo apt-get -y install meld 
 echo "install tools end"
 
 
