@@ -84,6 +84,9 @@ sudo apt-get install -y apt-transport-https
 sudo apt install -y compizconfig-settings-manager
 sudo apt install -y compiz-plugins-extra
 sudo apt-get -y install meld 
+# Sticky Notes 
+sudo add-apt-repository ppa:kelebek333/mint-tools -y
+sudo apt update -y && sudo apt install sticky -y
 echo "install tools end"
 
 
