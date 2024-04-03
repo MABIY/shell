@@ -3,6 +3,7 @@
 #       This program  install tools on ubuntu 22.04
 # History:
 # 2023/07/29    skylark  change release
+# 2024/04/03    skylark  change release
 # 说明
 # 运行方式: ./ubuntu_22.04_init_install_update.sh <userName> <password>
 # <userName> 当前账户 <password> 当前账户对应的密码
@@ -152,25 +153,81 @@ echo "deb [arch=amd64 signed-by=/usr/share/keyrings/ms-vscode-keyring.gpg] https
 sudo apt update -y
 sudo apt install -y code
 
+echo "!!!!need mount storage device !!!, mount direcoty: /media/files"
 
-# need download clash window sougou
-# install clash
-#sudo tar -zxvf ~/Downloads/software/Clash.for.Windows-0.20.30-x64-linux.tar.gz -C /opt
-#sudo mv /opt/Clash\ for\ Windows-0.20.30-x64-linux  /opt/clash
-#sudo sh -c 'echo "[Desktop Entry]
-#Name=clash
-#Name[zh_CN]=Clash for windwos
-#GenericName=Clash for windows
-#GenericName[zh_CN]=Clash for windows
-#Comment=Start Clash for windows
-#Comment[zh_CN]=启动Clash for windows
-#Exec=/opt/clash/cfw
-#Icon=/opt/clash/cfw
-#Terminal=false
-#Type=Application
-#Categories=System;Utility;
-#StartupNotify=false
-#" > /usr/share/applications/clash.desktop'
+# variable set 
+ubuntu_need_downloads_files_directory=/media/files/linux/ubuntu/22.04
+mkdir -p ~/.config/autostart
+
+echo "install lens"
+sudo cp $ubuntu_need_downloads_files_directory/tools/lens/Lens-2024.3.271133-latest.x86_64.AppImage /opt
+sudo chmod +x /opt/Lens-2024.3.271133-latest.x86_64.AppImage
+sudo chown $user:$user /opt/Lens-2024.3.271133-latest.x86_64.AppImage
+sudo ln -fs /opt/Lens-2024.3.271133-latest.x86_64.AppImage /opt/Lens.AppImage
+cp $ubuntu_need_downloads_files_directory/tools/lens/lens-desktop.desktop  ~/.local/share/applications/
+
+echo "install clash"
+sudo cp $ubuntu_need_downloads_files_directory/tools/proxy/clash-verge_1.3.8_amd64.AppImage /opt
+sudo chmod +x /opt/clash-verge_1.3.8_amd64.AppImage 
+sudo chown $user:$user  /opt/clash-verge_1.3.8_amd64.AppImage 
+sudo ln -fs /opt/clash-verge_1.3.8_amd64.AppImage /opt/clash-verge.AppImage
+cp $ubuntu_need_downloads_files_directory/tools/proxy/clash-verge.desktop  ~/.local/share/applications/
+cp $ubuntu_need_downloads_files_directory/tools/proxy/clash-verge_1.3.8_amd64_auto_start.desktop  ~/.config/autostart/
+
+
+# echo "set proxy start"
+# export http_proxy='http://0.0.0.0:1080'
+# export https_proxy='http://0.0.0.0:1080'
+# echo "set proxy end" 
+
+# echo "install oh my zsh start"
+# sudo apt-get install -y zsh 
+# echo "install oh my zsh"
+# yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# echo $password | chsh -s  $(which zsh)
+# ubuntu_need_downloads_files_directory=/media/files/linux/ubuntu/22.04
+# zsh << EOF
+# #oh my zsh copydir 
+# sudo apt install -y xclip
+# echo "install oh my zsh end"
+# echo "set directory: $ubuntu_need_downloads_files_directory"
+# #install asdf:The Multiple Runtime Version Manager
+# echo "start install asdf"
+# cp -r $ubuntu_need_downloads_files_directory/tools/asdf ~/.asdf
+# git -C ~/.asdf checkout -f
+# sed -i 's/plugins=(.*)/plugins=(git asdf)/g' ~/.zshrc
+# source ~/.zshrc
+# echo "end install asdf"
+
+# # start need proxy set
+# echo "asdf  start install software"
+# asdf plugin add nodejs
+# asdf install nodejs latest
+# asdf global nodejs latest
+# asdf plugin add java
+# asdf install java adoptopenjdk-8.0.382+5
+# asdf install java adoptopenjdk-11.0.19+7
+# asdf install java adoptopenjdk-17.0.8+7
+# asdf global java adoptopenjdk-17.0.8+7
+# echo ". ~/.asdf/plugins/java/set-java-home.zsh">> ~/.zshrc
+# asdf plugin add maven
+# asdf install maven latest
+# asdf global maven latest
+# echo "asdf end install software"
+# asdf plugin add gradle
+# asdf install gradle latest
+# asdf global gradle latest
+# asdf plugin-add flux2 https://github.com/tablexi/asdf-flux2.git
+# asdf install flux2 latest
+# asdf global flux2 latest
+# echo "command -v flux >/dev/null && . <(flux completion zsh)">> ~/.zshrc
+# source  ~/.zshrc
+# EOF
+
+# echo "install google chrome start"
+# wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+# sudo dpkg -i google-chrome-stable_current_amd64.deb
+
 
 # install sougou
 #sudo apt-get install fcitx
@@ -179,68 +236,6 @@ sudo apt install -y code
 #sudo apt install libqt5qml5 libqt5quick5 libqt5quickwidgets5 qml-module-qtquick2
 #sudo apt install libgsettings-qt1
 #sudo apt install -y -f
-
-# start need proxy set
-
-#echo "set proxy start"
-#export http_proxy='http://0.0.0.0:1080'
-##export https_proxy='socks5://127.0.0.1:1080'
-#export https_proxy='http://0.0.0.0:1080'
-#echo "set proxy end" 
-#
-#echo "install oh my zsh start"
-#sudo apt-get install -y zsh 
-#echo "install oh my zsh"
-#yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-#echo $password | chsh -s  $(which zsh)
-#echo "input custom alias export"
-#sudo sh -c "cat >> /home/$user/.zshrc <<EOF
-#alias datef=\"date '+%Y%m%d'\"
-#alias gdate=\"date +'%Y%m%d' | clipcopy\"
-#alias gpu=\"grive -p /home/$user/grive/\"
-#alias pu=\"git add -A && git commit -m  \"..\" && git push\"
-#alias rb=\"echo $password | sudo sync;sudo sync;sudo sync;sudo -S reboot\"
-#alias sd=\"gpu && sudo sync&&sudo sync&& sudo sync&&sudo -S shutdown -h 0\"
-#alias leanjava=\"idea ~/project/learn_java\"
-#alias killmw=\"killall -9 mysql-workbench-bin\"
-#alias noproxy=\"unset http_proxy && unset https_proxy\"
-#alias killwx=\"killall -9 electronic-wechat\"
-#export http_proxy='http://0.0.0.0:1080'
-##export https_proxy='socks5://127.0.0.1:1080'
-#export https_proxy='http://0.0.0.0:1080'
-#EOF"
-#oh my zsh copydir 
-#sudo apt install -y xclip
-#echo "install oh my zsh end"
-
-##install asdf:The Multiple Runtime Version Manager
-#echo "start install asdf"
-#git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.12.0
-#sed -i 's/plugins=(.*)/plugins=(git asdf)/g' ~/.zshrc
-#source ~/.zshrc
-#echo "end install asdf"
-
-#echo "asdf  start install software"
-#asdf plugin add nodejs
-#asdf install nodejs latest
-#asdf global nodejs latest
-#asdf plugin add java
-#asdf install java adoptopenjdk-8.0.382+5
-#asdf install java adoptopenjdk-11.0.19+7
-#asdf install java adoptopenjdk-17.0.8+7
-#asdf global java adoptopenjdk-17.0.8+7
-#echo ". ~/.asdf/plugins/java/set-java-home.zsh">> ~/.zshrc
-#asdf plugin add maven
-#asdf install maven latest
-#asdf global maven latest
-#echo "asdf end install software"
-#asdf plugin add gradle
-#asdf install gradle latest
-#asdf global gradle latest
-
-#echo "install google chrome start"
-#wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-#sudo dpkg -i google-chrome-stable_current_amd64.deb
 #
 #echo "install grive2"
 #sudo apt-get install git cmake build-essential libgcrypt20-dev libyajl-dev \
