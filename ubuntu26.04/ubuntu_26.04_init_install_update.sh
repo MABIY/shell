@@ -22,9 +22,9 @@ echo "set $user not need input password"
 echo "start change ubuntu source to aliyun repo"
 sudo tee /etc/apt/sources.list.d/ubuntu.sources > /dev/null <<'EOF'
 Types: deb
-URIs: http://mirrors.aliyun.com/ubuntu/
-Suites: noble noble-updates noble-backports
-Components: main restricted universe multiverse
+URIs: https://mirrors.aliyun.com/ubuntu
+Suites: resolute resolute-updates resolute-backports
+Components: main universe restricted multiverse
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 
 Types: deb
@@ -64,8 +64,8 @@ echo "installed chrome-gnome-shell"
 echo "install albert"
 echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_26.04/ /' | sudo tee /etc/apt/sources.list.d/home:manuelschneid3r.list
 curl -fsSL https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_26.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_manuelschneid3r.gpg > /dev/null
-sudo apt update
-sudo apt install albert
+sudo apt -y update
+sudo apt -y install albert
 echo "installed albert"
 
 
@@ -81,7 +81,7 @@ sudo apt install -y gnome-tweaks
 sudo apt install -y apt-transport-https
 sudo apt install -y compizconfig-settings-manager
 sudo apt install -y compiz-plugins-extra
-sudo apt -y install meld
+sudo apt install -y meld
 
 
 sudo apt install -y vim || echo "vim install error"
@@ -91,7 +91,7 @@ echo "set clipboard=unnamedplus">~/.vimrc
 echo "set clipboard=unnamedplus">~/.ideavimrc
 
 echo "install picture edit gimp start"
-sudo apt install gimp -y
+sudo apt install -y gimp 
 echo "install picture edit gimp end"
 
 echo "install work break reminder software start"
