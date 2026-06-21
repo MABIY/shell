@@ -7,6 +7,9 @@
 # <userName> 当前账户 <password> 当前账户对应的密码
 # 脚本最下面注释了需要代理和本地存储设备的脚本,如需使用 移除注释
 
+set -Eeuo pipefail
+trap 'echo "ERROR: line $LINENO"' ERR
+
 if [[ -z "$1" || -z "$2" ]]; then
         echo "first parameter user name , second parameter user password";
         exit 2;
@@ -23,7 +26,7 @@ echo "start change ubuntu source to aliyun repo"
 sudo tee /etc/apt/sources.list.d/ubuntu.sources > /dev/null <<'EOF'
 Types: deb
 URIs: https://mirrors.aliyun.com/ubuntu
-Suites: resolute resolute-updates resolute-backports
+Suites: noble noble-updates noble-backports
 Components: main universe restricted multiverse
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 
