@@ -26,7 +26,7 @@ echo "start change ubuntu source to aliyun repo"
 sudo tee /etc/apt/sources.list.d/ubuntu.sources > /dev/null <<'EOF'
 Types: deb
 URIs: https://mirrors.aliyun.com/ubuntu
-Suites: noble noble-updates noble-backports
+Suites: resolute resolute-updates resolute-backports
 Components: main universe restricted multiverse
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 
